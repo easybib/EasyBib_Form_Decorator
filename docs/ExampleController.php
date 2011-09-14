@@ -26,7 +26,7 @@
  * @author   Michael Scholl <michael@sch0ll.de>
  * @license  http://www.opensource.org/licenses/mit-license.html MIT License
  * @version  git: $id$
- * @link     https://github.com/easybib/EasyBib_Form_Decorator_TwitterBootstrap
+ * @link     https://github.com/easybib/EasyBib_Form_Decorator
  */
 
 /**
@@ -37,7 +37,7 @@
  * @author   Michael Scholl <michael@sch0ll.de>
  * @license  http://www.opensource.org/licenses/mit-license.html MIT License
  * @version  Release: @package_version@
- * @link     https://github.com/easybib/EasyBib_Form_Decorator_TwitterBootstrap
+ * @link     https://github.com/easybib/EasyBib_Form_Decorator
  */
 class TestController extends Zend_Controller_Action
 {
