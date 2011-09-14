@@ -22,20 +22,22 @@ $package = new PEAR_PackageFileManager2();
 
 $package->setOptions(
     array(
-        'filelistgenerator'      => 'file',
-        'simpleoutput'           => true,
-        'baseinstalldir'         => '/',
-        'packagedirectory'       => './',
-        'dir_roles'              => array(
+        'filelistgenerator' => 'file',
+        'simpleoutput'      => true,
+        'baseinstalldir'    => '/',
+        'packagedirectory'  => './',
+        'dir_roles'         => array(
             'library' => 'php',
             'tests'   => 'test',
             'docs'    => 'doc',
         ),
-        'ignore' => array(
+        'exceptions'        => array(
+            'README.md' => 'doc',
+        ),
+        'ignore'            => array(
             '.git*',
             'generate-package.php',
             '*.tgz',
-            'README.md',
         )
     )
 );
