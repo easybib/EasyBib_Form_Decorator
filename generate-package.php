@@ -5,12 +5,12 @@ ini_set('date.timezone', 'Europe/Berlin');
 require_once 'PEAR/PackageFileManager2.php';
 PEAR::setErrorHandling(PEAR_ERROR_DIE);
 
-$api_version     = '0.1.0';
+$api_version     = '0.1.1';
 $api_state       = 'alpha';
 
-$release_version = '0.1.0';
+$release_version = '0.1.1';
 $release_state   = 'alpha';
-$release_notes   = "Initial release\n";
+$release_notes   = "Initial release (with small bugfix)\n";
 
 $description = "EasyBib_Form Decorator supports three modes: \n"
     . " * Table \n"

@@ -26,10 +26,10 @@ The default is &apos;Twitter Bootstrap&apos;.
   <active>yes</active>
  </lead>
  <date>2011-09-14</date>
- <time>18:30:04</time>
+ <time>18:31:29</time>
  <version>
-  <release>0.1.0</release>
-  <api>0.1.0</api>
+  <release>0.1.1</release>
+  <api>0.1.1</api>
  </version>
  <stability>
   <release>alpha</release>
@@ -37,7 +37,7 @@ The default is &apos;Twitter Bootstrap&apos;.
  </stability>
  <license uri="http://www.opensource.org/licenses/mit-license.php">MIT</license>
  <notes>
-Initial release
+Initial release (with small bugfix)
  </notes>
  <contents>
   <dir baseinstalldir="/" name="/">
@@ -118,6 +118,21 @@ Initial release
    <license uri="http://www.opensource.org/licenses/mit-license.php">MIT</license>
    <notes>
 Initial release
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>0.1.1</release>
+    <api>0.1.1</api>
+   </version>
+   <stability>
+    <release>alpha</release>
+    <api>alpha</api>
+   </stability>
+   <date>2011-09-14</date>
+   <license uri="http://www.opensource.org/licenses/mit-license.php">MIT</license>
+   <notes>
+Initial release (with small bugfix)
    </notes>
   </release>
  </changelog>
