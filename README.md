@@ -9,7 +9,28 @@ Needs to be added to view helper (path)
 
 ## Usage
 
- 1. Clone this repository
- 2. pear install package.xml
- 3. all files are in your `include_path`
+ 1. sudo pear channel-discover easybib.github.com/pear
+ 2. sudo pear install easybib/EasyBib_Form_Decorator-alpha 
+ 	for update:
+ 		- sudo pear upgrade -c easybib
+		- (sudo pear channel-update easybib.github.com/pear)
+ 3. add autoloaderNamespaces[] = "EasyBib" to your application.ini
+ 4. follow examples in docs folder to integrate it into your forms
 
+
+## Create new package Version
+Package Rep (after source change)
+- change version in generate-package.php
+- php generate-package.php make
+- pear package
+- move created tgz archiv to pear rep
+
+Pear Rep
+- pirum add . new_version.tgz
+- git add -A
+- git commit -a
+- git push origin gh-pages
+
+Pear Upgrade (local/vagrant box)
+- sudo pear upgrade -c easybib
+- (sudo pear channel-update easybib.github.com/pear)
