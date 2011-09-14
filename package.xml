@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package packagerversion="1.9.1" version="2.0" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0
+    http://pear.php.net/dtd/tasks-1.0.xsd
+    http://pear.php.net/dtd/package-2.0
+    http://pear.php.net/dtd/package-2.0.xsd">
+ <name>EasyBib_Form_Decorator</name>
+ <channel>pear.php.net</channel>
+ <summary>A set of decorators for Zend_Form</summary>
+ <description>EasyBib_Form Decorator supports three modes: 
+ * Table 
+ * Div 
+ * Twitter Bootstrap 
+
+The default is &apos;Twitter Bootstrap&apos;.
+ </description>
+ <lead>
+  <name>Michael Scholl</name>
+  <user>mischosch</user>
+  <email>michael@sch0ll.de</email>
+  <active>yes</active>
+ </lead>
+ <lead>
+  <name>Till Klampaeckel</name>
+  <user>till</user>
+  <email>till@lagged.biz</email>
+  <active>yes</active>
+ </lead>
+ <date>2011-09-14</date>
+ <time>17:24:33</time>
+ <version>
+  <release>0.1.0</release>
+  <api>0.1.0</api>
+ </version>
+ <stability>
+  <release>alpha</release>
+  <api>alpha</api>
+ </stability>
+ <license uri="http://www.opensource.org/licenses/mit-license.php">MIT</license>
+ <notes>
+Initial release
+ </notes>
+ <contents>
+  <dir baseinstalldir="/" name="/">
+   <dir name="docs">
+    <file baseinstalldir="/" name="ExampleController.php" role="doc" />
+    <file baseinstalldir="/" name="ExampleForm.php" role="doc" />
+   </dir> <!-- /docs -->
+   <dir name="library">
+    <dir name="EasyBib">
+     <dir name="Form">
+      <dir name="Decorator">
+       <file baseinstalldir="/" name="BootstrapErrors.php" role="php" />
+       <file baseinstalldir="/" name="BootstrapTag.php" role="php" />
+      </dir> <!-- /library/EasyBib/Form/Decorator -->
+      <file baseinstalldir="/" name="Decorator.php" role="php" />
+     </dir> <!-- /library/EasyBib/Form -->
+     <dir name="View">
+      <dir name="Helper">
+       <file baseinstalldir="/" name="MessagesFormatter.php" role="php" />
+      </dir> <!-- /library/EasyBib/View/Helper -->
+     </dir> <!-- /library/EasyBib/View -->
+     <file baseinstalldir="/" name="Form.php" role="php" />
+    </dir> <!-- /library/EasyBib -->
+   </dir> <!-- /library -->
+   <file baseinstalldir="/" name="README.md" role="doc" />
+  </dir> <!-- / -->
+ </contents>
+ <dependencies>
+  <required>
+   <php>
+    <min>5.2.0</min>
+   </php>
+   <pearinstaller>
+    <min>1.4.0a7</min>
+   </pearinstaller>
+   <extension>
+    <name>spl</name>
+   </extension>
+  </required>
+  <optional>
+   <package>
+    <name>ZF</name>
+    <channel>pear.zfcampus.org</channel>
+    <min>1.10.0</min>
+   </package>
+  </optional>
+ </dependencies>
+ <phprelease>
+  <filelist>
+   <install as="EasyBib/Form/Decorator/BootstrapErrors.php" name="library/EasyBib/Form/Decorator/BootstrapErrors.php" />
+   <install as="EasyBib/Form/Decorator/BootstrapTag.php" name="library/EasyBib/Form/Decorator/BootstrapTag.php" />
+   <install as="EasyBib/Form/Decorator.php" name="library/EasyBib/Form/Decorator.php" />
+   <install as="EasyBib/Form.php" name="library/EasyBib/Form.php" />
+   <install as="EasyBib/View/Helper/MessagesFormatter.php" name="library/EasyBib/View/Helper/MessagesFormatter.php" />
+  </filelist>
+ </phprelease>
+ <changelog>
+  <release>
+   <version>
+    <release>0.1.0</release>
+    <api>0.1.0</api>
+   </version>
+   <stability>
+    <release>alpha</release>
+    <api>alpha</api>
+   </stability>
+   <date>2011-09-14</date>
+   <license uri="http://www.opensource.org/licenses/mit-license.php">MIT</license>
+   <notes>
+Initial release
+   </notes>
+  </release>
+ </changelog>
+</package>
