@@ -56,7 +56,7 @@ class EasyBib_Form extends Zend_Form
         return $this->model;
     }
 
-	/**
+    /**
      * @param $model
      */
     public function setModel($model)
@@ -64,7 +64,7 @@ class EasyBib_Form extends Zend_Form
         $this->model = $model;
     }
 
-	/**
+    /**
      * Build Bootstrap Error Decorators
      */
     public function buildBootstrapErrorDecorators() {

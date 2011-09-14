@@ -48,8 +48,8 @@ class EasyBib_View_Helper_MessagesFormatter extends Zend_View_Helper_Abstract
      * 
      * With array use following notation: array('error', 'message')
      * -> first child is class for paragraph 
-     * 		- use success|notice|error for blueprint
-     * 		- use (alert-message) warning|error|success|info for bootstrap
+     *      - use success|notice|error for blueprint
+     *      - use (alert-message) warning|error|success|info for bootstrap
      * -> second child is printed message
      * 
      * @param  array  $messages
