@@ -44,7 +44,6 @@
  * @version  Release: @package_version@
  * @link     https://github.com/easybib/EasyBib_Form_Decorator
  */
- */
 class EasyBib_Form extends Zend_Form 
 {
     protected $model;

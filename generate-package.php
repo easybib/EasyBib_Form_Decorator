@@ -45,7 +45,7 @@ $package->setOptions(
 $package->setPackage('EasyBib_Form_Decorator');
 $package->setSummary('A set of decorators for Zend_Form');
 $package->setDescription($description);
-$package->setChannel('pear.php.net');
+$package->setChannel('easybib.github.com/pear');
 $package->setPackageType('php');
 $package->setLicense(
     'MIT',
