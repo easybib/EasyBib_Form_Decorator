@@ -98,8 +98,11 @@ readDirectory(__DIR__ . '/library');
 $base = __DIR__ . '/';
 
 foreach ($files as $file) {
+
+    $file2 = str_replace($base, '', $file);
+
     $package->addReplacement(
-       $file,
+       $file2,
        'package-info',
        '@package_version@',
        'version'
