@@ -20,7 +20,7 @@
  * DEALINGS IN THE SOFTWARE.
  *
  * PHP Version 5
- * 
+ *
  * @category EasyBib
  * @package  Form
  * @author   Michael Scholl <michael@sch0ll.de>
@@ -32,9 +32,9 @@
 /**
  * EasyBib_Form
  *
- * Extends Zend_Form 
+ * Extends Zend_Form
  * - provides model support
- * - provides buildBootstrapErrorDecorators method 
+ * - provides buildBootstrapErrorDecorators method
  *   for adding css error classes to form if not valid
  *
  * @category EasyBib
@@ -45,10 +45,10 @@
  * @link     https://github.com/easybib/EasyBib_Form_Decorator
  */
 
-class EasyBib_Form extends Zend_Form 
+class EasyBib_Form extends Zend_Form
 {
     protected $model;
-    
+
     /**
      * @return the $model
      */
@@ -57,7 +57,7 @@ class EasyBib_Form extends Zend_Form
         return $this->model;
     }
 
-	/**
+    /**
      * @param $model
      */
     public function setModel($model)
@@ -65,7 +65,7 @@ class EasyBib_Form extends Zend_Form
         $this->model = $model;
     }
 
-	/**
+    /**
      * Build Bootstrap Error Decorators
      */
     public function buildBootstrapErrorDecorators() {

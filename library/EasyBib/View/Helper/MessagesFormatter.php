@@ -45,13 +45,13 @@ class EasyBib_View_Helper_MessagesFormatter extends Zend_View_Helper_Abstract
     /**
      * Formats given messages in a paragraph with given class
      * input format can be string, array, multi dimensional array
-     * 
+     *
      * With array use following notation: array('error', 'message')
-     * -> first child is class for paragraph 
-     * 		- use success|notice|error for blueprint
-     * 		- use (alert-message) warning|error|success|info for bootstrap
+     * -> first child is class for paragraph
+     *      - use success|notice|error for blueprint
+     *      - use (alert-message) warning|error|success|info for bootstrap
      * -> second child is printed message
-     * 
+     *
      * @param  array  $messages
      * @param  string $tag (default=p)
      * @param  string $format (default=blueprint)
@@ -60,7 +60,7 @@ class EasyBib_View_Helper_MessagesFormatter extends Zend_View_Helper_Abstract
     public function messagesFormatter($messages, $tag = 'p', $format = 'bootstrap')
     {
         $return = '';
-        
+
         if (is_array($messages) && count($messages) > 0) {
             if (is_array($messages[0])) {
                 foreach ($messages AS $msg) {
@@ -72,11 +72,11 @@ class EasyBib_View_Helper_MessagesFormatter extends Zend_View_Helper_Abstract
                         }
                         $return .= '<'.$tag.' '.$class.'>';
                         if ($format == 'bootstrap') {
-                            $return .= '<p>';  
+                            $return .= '<p>';
                         }
                         $return .= $msg[1];
                         if ($format == 'bootstrap') {
-                            $return .= '</p>';  
+                            $return .= '</p>';
                         }
                         $return .= '</'.$tag.'>';
                     }
@@ -89,11 +89,11 @@ class EasyBib_View_Helper_MessagesFormatter extends Zend_View_Helper_Abstract
                 }
                 $return .= '<'.$tag.' '.$class.'>';
                 if ($format == 'bootstrap') {
-                    $return .= '<p>';  
+                    $return .= '<p>';
                 }
                 $return .= $messages[1];
                 if ($format == 'bootstrap') {
-                    $return .= '</p>';  
+                    $return .= '</p>';
                 }
                 $return .= '</'.$tag.'>';
             }
@@ -105,15 +105,15 @@ class EasyBib_View_Helper_MessagesFormatter extends Zend_View_Helper_Abstract
             }
             $return .= '<'.$tag.' '.$class.'>';
             if ($format == 'bootstrap') {
-              $return .= '<p>';  
+              $return .= '<p>';
             }
             $return .= $messages;
             if ($format == 'bootstrap') {
-              $return .= '</p>';  
+              $return .= '</p>';
             }
             $return .= '</'.$tag.'>';
         }
-        
+
         return $return;
     }
 }
