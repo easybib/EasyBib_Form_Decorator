@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<package packagerversion="1.9.1" version="2.0" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0
+<package packagerversion="1.9.4" version="2.0" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0
     http://pear.php.net/dtd/tasks-1.0.xsd
     http://pear.php.net/dtd/package-2.0
     http://pear.php.net/dtd/package-2.0.xsd">
@@ -26,7 +26,7 @@ The default is &apos;Twitter Bootstrap&apos;.
   <active>yes</active>
  </lead>
  <date>2011-09-14</date>
- <time>17:24:33</time>
+ <time>17:31:49</time>
  <version>
   <release>0.1.0</release>
   <api>0.1.0</api>
@@ -49,17 +49,27 @@ Initial release
     <dir name="EasyBib">
      <dir name="Form">
       <dir name="Decorator">
-       <file baseinstalldir="/" name="BootstrapErrors.php" role="php" />
-       <file baseinstalldir="/" name="BootstrapTag.php" role="php" />
+       <file baseinstalldir="/" name="BootstrapErrors.php" role="php">
+        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       </file>
+       <file baseinstalldir="/" name="BootstrapTag.php" role="php">
+        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       </file>
       </dir> <!-- /library/EasyBib/Form/Decorator -->
-      <file baseinstalldir="/" name="Decorator.php" role="php" />
+      <file baseinstalldir="/" name="Decorator.php" role="php">
+       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      </file>
      </dir> <!-- /library/EasyBib/Form -->
      <dir name="View">
       <dir name="Helper">
-       <file baseinstalldir="/" name="MessagesFormatter.php" role="php" />
+       <file baseinstalldir="/" name="MessagesFormatter.php" role="php">
+        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       </file>
       </dir> <!-- /library/EasyBib/View/Helper -->
      </dir> <!-- /library/EasyBib/View -->
-     <file baseinstalldir="/" name="Form.php" role="php" />
+     <file baseinstalldir="/" name="Form.php" role="php">
+      <tasks:replace from="@package_version@" to="version" type="package-info" />
+     </file>
     </dir> <!-- /library/EasyBib -->
    </dir> <!-- /library -->
    <file baseinstalldir="/" name="README.md" role="doc" />
