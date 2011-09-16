@@ -1,15 +1,18 @@
 ## Installation & Configuration
 
- 1. sudo pear channel-discover easybib.github.com/pear
- 2. sudo pear install easybib/EasyBib_Form_Decorator-alpha 
- 	for update:
- 		- sudo pear upgrade -c easybib
-		- (sudo pear channel-update easybib.github.com/pear)
+ 1. `sudo pear channel-discover easybib.github.com/pear`
+ 2. `sudo pear install easybib/EasyBib_Form_Decorator-alpha`
  3. add autoloaderNamespaces[] = "EasyBib" to your application.ini
  4. add $view->addHelperPath('EasyBib/View/Helper', 'EasyBib_View_Helper'); 
  	in your Bootstrap
  5. follow examples in docs folder to integrate it into your forms
 
+### Updating?
+
+(We like you best!)
+
+ 1. `sudo pear upgrade -c easybib` or: `sudo pear channel-update easybib.github.com/pear`
+ 2. `pear upgrade easybib/EasyBib_Form_Decorator`
 
 ## Form Decorator
 
@@ -28,11 +31,11 @@ Package Rep (after source change)
 - move created tgz archiv to pear rep
 
 Pear Rep
-- pirum add . new_version.tgz
-- git add -A
-- git commit -a
-- git push origin gh-pages
+- `pirum add . new_version.tgz`
+- `git add -A`
+- `git commit -a`
+- `git push origin gh-pages`
 
 Pear Upgrade (local/vagrant box)
-- sudo pear upgrade -c easybib
-- (sudo pear channel-update easybib.github.com/pear)
+- `sudo pear upgrade -c easybib` 
+- (`sudo pear channel-update easybib.github.com/pear`)
