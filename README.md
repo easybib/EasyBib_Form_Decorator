@@ -1,13 +1,4 @@
-## Form Decorator
-
-See `docs` folder for a example form and controller usage of decorator stuff
-
-## MessagesFormatter
-
-A View Helper to print out fancy twitter bootstrap messages.
-Needs to be added to view helper (path)
-
-## Usage
+## Installation & Configuration
 
  1. sudo pear channel-discover easybib.github.com/pear
  2. sudo pear install easybib/EasyBib_Form_Decorator-alpha 
@@ -15,8 +6,19 @@ Needs to be added to view helper (path)
  		- sudo pear upgrade -c easybib
 		- (sudo pear channel-update easybib.github.com/pear)
  3. add autoloaderNamespaces[] = "EasyBib" to your application.ini
- 4. follow examples in docs folder to integrate it into your forms
+ 4. add $view->addHelperPath('EasyBib/View/Helper', 'EasyBib_View_Helper'); 
+ 	in your Bootstrap
+ 5. follow examples in docs folder to integrate it into your forms
 
+
+## Form Decorator
+
+See `docs` folder for a example form and controller usage of decorator stuff
+
+## MessagesFormatter
+
+A View Helper to print out fancy twitter bootstrap messages.
+Needs to be added to view helper path (see Installlation 4.)
 
 ## Create new package Version
 Package Rep (after source change)
