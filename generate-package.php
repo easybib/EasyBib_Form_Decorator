@@ -5,12 +5,12 @@ ini_set('date.timezone', 'Europe/Berlin');
 require_once 'PEAR/PackageFileManager2.php';
 PEAR::setErrorHandling(PEAR_ERROR_DIE);
 
-$api_version     = '0.1.2';
+$api_version     = '0.1.3';
 $api_state       = 'alpha';
 
-$release_version = '0.1.2';
+$release_version = '0.1.3';
 $release_state   = 'alpha';
-$release_notes   = "detabed version\n";
+$release_notes   = "Fix Submit/Cancel Button to support setAttrib('class')\n";
 
 $description = "EasyBib_Form Decorator supports three modes: \n"
     . " * Table \n"

@@ -304,8 +304,17 @@ class EasyBib_Form_Decorator
         if ($form->getElement($submit_str)) {
             $form->getElement($submit_str)->setDecorators(self::$_SubmitDecorator[$format]);
             if ($format == self::BOOTSTRAP) {
+                $attribs = $form->getElement($submit_str)->getAttrib('class');
+                if (empty($attribs)) {
+                    $attribs = array('btn', 'primary');
+                } else {
+                    if (is_string($attribs)) {
+                        $attribs = array($attribs);
+                    }
+                    $attribs = array_unique(array_merge(array('btn'), $attribs));
+                }
                 $form->getElement($submit_str)
-                    ->setAttrib('class', array('btn', 'primary'))
+                    ->setAttrib('class', $attribs)
                     ->setAttrib('type', 'submit');
                 if ($form->getElement($cancel_str)) {
                     $form->getElement($submit_str)->getDecorator('HtmlTag')
@@ -318,8 +327,17 @@ class EasyBib_Form_Decorator
         if ($form->getElement($cancel_str)) {
             $form->getElement($cancel_str)->setDecorators(self::$_ResetDecorator[$format]);
             if ($format == self::BOOTSTRAP) {
+                $attribs = $form->getElement($cancel_str)->getAttrib('class');
+                if (empty($attribs)) {
+                    $attribs = array('btn');
+                } else {
+                    if (is_string($attribs)) {
+                        $attribs = array($attribs);
+                    }
+                    $attribs = array_unique(array_merge(array('btn'), $attribs));
+                }
                 $form->getElement($cancel_str)
-                    ->setAttrib('class', 'btn')
+                    ->setAttrib('class', $attribs)
                     ->setAttrib('type', 'reset');
                 if ($form->getElement($submit_str)) {
                     $form->getElement($cancel_str)->getDecorator('HtmlTag')
