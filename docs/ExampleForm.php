@@ -39,7 +39,7 @@
  * @version  Release: @package_version@
  * @link     https://github.com/easybib/EasyBib_Form_Decorator
  */
-class EasyBib_ExampleForm extends EasyBib_Form 
+class EasyBib_ExampleForm extends EasyBib_Form
 {
     /**
      * Configure user form.
@@ -52,44 +52,44 @@ class EasyBib_ExampleForm extends EasyBib_Form
         $this->setMethod('POST');
         $this->setAction('/test/add');
         $this->setAttrib('id', 'testForm');
-              
+
         // create elements
         $userId      = new Zend_Form_Element_Hidden('id');
         $mail        = new Zend_Form_Element_Text('email');
         $name        = new Zend_Form_Element_Text('name');
         $submit      = new Zend_Form_Element_Button('submit');
         $cancel      = new Zend_Form_Element_Button('cancel');
-        
+
         // config elements
         $userId->addValidator('digits');
-        
+
         $mail->setLabel('Mail:')
             ->setRequired(true)
             ->addValidator('emailAddress');
-            
+
         $name->setLabel('Name:')
             ->setRequired(true);
 
         $submit->setLabel('Save');
         $cancel->setLabel('Cancel');
-        
+
         // add elements
         $this->addElements(array(
             $userId, $mail, $name, $submit, $cancel
         ));
-        
+
         // add display group
         $this->addDisplayGroup(
-            array('email', 'name', 'password', 'submit', 'cancel'), 
+            array('email', 'name', 'password', 'submit', 'cancel'),
             'users'
         );
         $this->getDisplayGroup('users')->setLegend('Add User');
-        
+
         // set decorators
         EasyBib_Form_Decorator::setFormDecorator($this, EasyBib_Form_Decorator::BOOTSTRAP, 'submit', 'cancel');
-        
+
     }
-    
+
     /**
      * Validate the form
      *

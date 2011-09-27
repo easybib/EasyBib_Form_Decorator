@@ -20,7 +20,7 @@
  * DEALINGS IN THE SOFTWARE.
  *
  * PHP Version 5
- * 
+ *
  * @category EasyBib
  * @package  TestController
  * @author   Michael Scholl <michael@sch0ll.de>
@@ -44,24 +44,24 @@ class TestController extends Zend_Controller_Action
     public function addAction()
     {
         $testForm = new EasyBib_ExampleForm();
-         
+
         if ($this->_request->isPost()) {
             if ($testForm->isValid($this->_request->getPost())) {
-                 
+
                 // fetch values
                 $values = $testForm->getValues();
-                 
+
                 // ... do some stuff
-            } 
-            
+            }
+
             // print error
             else {
                 $testForm->buildBootstrapErrorDecorators();
                 $this->view->messages = array('error', 'Please control your input!'); // extra message on top
-                
+
             }
         }
-         
+
     }
 
 }

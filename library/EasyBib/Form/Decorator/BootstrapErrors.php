@@ -71,7 +71,7 @@ class EasyBib_Form_Decorator_BootstrapErrors extends Zend_Form_Decorator_HtmlTag
             ->setElementSeparator('<br />')
             ->setElementSeparator('</span>');
         $errors = $formErrorHelper->formErrors($errors, array('class' => 'help-inline'));
- 
+
         switch ($placement) {
             case 'PREPEND':
                 return $errors . $separator . $content;
@@ -80,5 +80,5 @@ class EasyBib_Form_Decorator_BootstrapErrors extends Zend_Form_Decorator_HtmlTag
                 return $content . $separator . $errors;
         }
     }
-    
+
 }

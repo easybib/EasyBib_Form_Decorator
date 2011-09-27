@@ -105,5 +105,5 @@ class EasyBib_Form_Decorator_BootstrapTag extends Zend_Form_Decorator_HtmlTag
                      . (($closeOnly || !$openOnly) ? $this->_getCloseTag($tag) : '');
         }
     }
-    
+
 }

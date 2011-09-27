@@ -31,19 +31,19 @@
 
 /**
  * Default Decorators Set
- * 
+ *
  * General usage:
  * EasyBib_Form_Decorator::setFormDecorator($form, 'div', 'submit', 'cancel');
  * EasyBib_Form_Decorator::setFormDecorator(
- *   Instance of form, 
+ *   Instance of form,
  *   Decorator Mode - 3 different options:
  *      - EasyBib_Form_Decorator::TABLE     (html table style)
  *      - EasyBib_Form_Decorator::DIV       (div style)
  *      - EasyBib_Form_Decorator::BOOTSTRAP (twitter bootstrap style)
- *   Name of submit button, 
+ *   Name of submit button,
  *   Name of cancel button
  * );
- * 
+ *
  * @category EasyBib
  * @package  EasyBib_Form
  * @author   Michael Scholl <michael@sch0ll.de>
@@ -59,100 +59,100 @@ class EasyBib_Form_Decorator
     const TABLE = 'table';
 
     const DIV = 'div';
-    
+
     const BOOTSTRAP = 'bootstrap';
 
     /**
      * Element Decorator
-     * 
+     *
      * @staticvar array
      */
     protected static $_ElementDecorator = array(
         'table' => array(
-            'ViewHelper', 
+            'ViewHelper',
             array(
-                'Description', 
+                'Description',
                 array(
-                    'tag' => '', 
-                    'escape' => false, 
+                    'tag' => '',
+                    'escape' => false,
                     'image' => '/images/icons/information.png'
                 )
-            ), 
-            'Errors', 
+            ),
+            'Errors',
             array(
                 array(
                     'data' => 'HtmlTag'
-                ), 
+                ),
                 array(
                     'tag' => 'td'
                 )
-            ), 
+            ),
             array(
-                'Label', 
+                'Label',
                 array(
                     'tag' => 'td'
                 )
-            ), 
+            ),
             array(
                 array(
                     'row' => 'HtmlTag'
-                ), 
+                ),
                 array(
                     'tag' => 'tr'
                 )
             )
-        ), 
+        ),
         'div' => array(
             array(
                 'ViewHelper'
-            ), 
+            ),
             array(
                 'Errors'
-            ), 
+            ),
             array(
-                'Description', 
+                'Description',
                 array(
-                    'tag'   => 'span', 
+                    'tag'   => 'span',
                     'class' => 'hint'
                 )
-            ), 
+            ),
             array(
                 'Label'
-            ), 
+            ),
             array(
-                'HtmlTag', 
+                'HtmlTag',
                 array(
                     'tag' => 'div'
                 )
             )
-        ), 
+        ),
         'bootstrap' => array(
             array(
                 'ViewHelper'
-            ), 
+            ),
             array(
                 'BootstrapErrors'
-            ), 
+            ),
             array(
-                'Description', 
+                'Description',
                 array(
-                    'tag'   => 'span', 
+                    'tag'   => 'span',
                     'class' => 'help-inline'
                 )
-            ),  
+            ),
             array(
-                'BootstrapTag', 
+                'BootstrapTag',
                 array(
                     'class' => 'input'
                 )
             ),
             array(
                 'Label'
-            ), 
+            ),
             array(
-                'HtmlTag', 
+                'HtmlTag',
                 array(
-                    'tag'   => 'div', 
+                    'tag'   => 'div',
                     'class' => 'clearfix'
                 )
             )
@@ -161,45 +161,45 @@ class EasyBib_Form_Decorator
 
     /**
      * Submit Element Decorator
-     * 
+     *
      * @staticvar array
      */
     protected static $_SubmitDecorator = array(
         'table' => array(
             'ViewHelper'
-        ), 
+        ),
         'div' => array(
             'ViewHelper'
-        ), 
+        ),
         'bootstrap' => array(
-            'ViewHelper', 
+            'ViewHelper',
             array(
-                'HtmlTag', 
+                'HtmlTag',
                 array(
-                    'tag'   => 'div', 
+                    'tag'   => 'div',
                     'class' => 'actions',
                     'openOnly' => false
                 )
             )
         )
     );
-    
+
     /**
      * Reset Element Decorator
-     * 
+     *
      * @staticvar array
      */
     protected static $_ResetDecorator = array(
         'table' => array(
             'ViewHelper'
-        ), 
+        ),
         'div' => array(
             'ViewHelper'
-        ), 
+        ),
         'bootstrap' => array(
-            'ViewHelper', 
+            'ViewHelper',
             array(
-                'HtmlTag', 
+                'HtmlTag',
                 array(
                     'closeOnly' => false
                 )
@@ -209,16 +209,16 @@ class EasyBib_Form_Decorator
 
     /**
      * Hiden Element Decorator
-     * 
+     *
      * @staticvar array
      */
     protected static $_HiddenDecorator = array(
         'table' => array(
             'ViewHelper'
-        ), 
+        ),
         'div' => array(
             'ViewHelper'
-        ), 
+        ),
         'bootstrap' => array(
             'ViewHelper'
         )
@@ -226,55 +226,55 @@ class EasyBib_Form_Decorator
 
     /**
      * Form Element Decorator
-     * 
+     *
      * @staticvar array
      */
     protected static $_FormDecorator = array(
         'table' => array(
-            'FormElements', 
+            'FormElements',
             'Form'
-        ), 
+        ),
         'div' => array(
-            'FormElements', 
+            'FormElements',
             'Form'
-        ), 
+        ),
         'bootstrap' => array(
-            'FormElements', 
+            'FormElements',
             'Form'
         )
     );
 
     /**
      * DisplayGroup Decorator
-     * 
+     *
      * @staticvar array
      */
     protected static $_DisplayGroupDecorator = array(
         'table' => array(
-            'FormElements', 
+            'FormElements',
             array(
-                'HtmlTag', 
+                'HtmlTag',
                 array(
-                    'tag' => 'table', 
+                    'tag' => 'table',
                     'summary' => ''
                 )
-            ), 
+            ),
             'Fieldset'
-        ), 
+        ),
         'div' => array(
-            'FormElements', 
+            'FormElements',
             'Fieldset'
-        ), 
+        ),
         'bootstrap' => array(
-            'FormElements', 
+            'FormElements',
             'Fieldset'
         )
-        
+
     );
 
     /**
      * Set the form decorators by the given string format or by the default div style
-     * 
+     *
      * @param object $objForm        Zend_Form pointer-reference
      * @param string $constFormat    Project_Plugin_FormDecoratorDefinition constants
      * @return NULL
@@ -287,19 +287,19 @@ class EasyBib_Form_Decorator
         $form->setDisableLoadDefaultDecorators(true);
         $form->setDisplayGroupDecorators(self::$_DisplayGroupDecorator[$format]);
         $form->setDecorators(self::$_FormDecorator[$format]);
-        
+
         // set needed prefix path for bootstrap decorators
         if ($format == self::BOOTSTRAP) {
             $form->addElementPrefixPath(
-                'EasyBib_Form_Decorator', 
-                'EasyBib/Form/Decorator', 
+                'EasyBib_Form_Decorator',
+                'EasyBib/Form/Decorator',
                 Zend_Form::DECORATOR
             );
         }
-        
+
         // set form element decorators
         $form->setElementDecorators(self::$_ElementDecorator[$format]);
-        
+
         // set submit button decorators
         if ($form->getElement($submit_str)) {
             $form->getElement($submit_str)->setDecorators(self::$_SubmitDecorator[$format]);
@@ -322,7 +322,7 @@ class EasyBib_Form_Decorator
                 }
             }
         }
-        
+
         // set cancel button decorators
         if ($form->getElement($cancel_str)) {
             $form->getElement($cancel_str)->setDecorators(self::$_ResetDecorator[$format]);
@@ -345,7 +345,7 @@ class EasyBib_Form_Decorator
                 }
             }
         }
-        
+
         // set hidden input decorators
         foreach ($form->getElements() as $e) {
             if ($e->getType() == 'Zend_Form_Element_Hidden') {
@@ -353,4 +353,4 @@ class EasyBib_Form_Decorator
             }
         }
     }
-}  
+}
