@@ -74,8 +74,6 @@ class EasyBib_Form_Decorator
                 'Description',
                 array(
                     'tag' => '',
-                    'escape' => false,
-                    'image' => '/images/icons/information.png'
                 )
             ),
             'Errors',
@@ -248,7 +246,24 @@ class EasyBib_Form_Decorator
      */
     protected static $_SubmitDecorator = array(
         'table' => array(
-            'ViewHelper'
+            'ViewHelper', 
+            array(
+                array(
+                    'data' => 'HtmlTag'
+                ),
+                array(
+                    'tag' => 'td'
+                )
+            ),
+            array(
+                array(
+                    'row' => 'HtmlTag'
+                ),
+                array(
+                    'tag' => 'tr',
+                    'class' => 'buttons'
+                )
+            )
         ),
         'div' => array(
             'ViewHelper'
@@ -273,7 +288,23 @@ class EasyBib_Form_Decorator
      */
     protected static $_ResetDecorator = array(
         'table' => array(
-            'ViewHelper'
+            'ViewHelper', 
+            array(
+                array(
+                    'data' => 'HtmlTag'
+                ),
+                array(
+                    'tag' => 'td'
+                )
+            ),
+            array(
+                array(
+                    'row' => 'HtmlTag'
+                ),
+                array(
+                    'tag' => 'tr'
+                )
+            )
         ),
         'div' => array(
             'ViewHelper'
@@ -403,6 +434,14 @@ class EasyBib_Form_Decorator
                         ->setOption('openOnly', true);
                 }
             }
+            if ($format == self::TABLE) {
+                if ($form->getElement($cancel_str)) {
+                    $form->getElement($submit_str)->getDecorator('data')
+                        ->setOption('openOnly', true);
+                    $form->getElement($submit_str)->getDecorator('row')
+                        ->setOption('openOnly', true);
+                }
+            }
         }
 
         // set cancel button decorators
@@ -423,6 +462,14 @@ class EasyBib_Form_Decorator
                     ->setAttrib('type', 'reset');
                 if ($form->getElement($submit_str)) {
                     $form->getElement($cancel_str)->getDecorator('HtmlTag')
+                        ->setOption('closeOnly', true);
+                }
+            }
+            if ($format == self::TABLE) {
+                if ($form->getElement($submit_str)) {
+                    $form->getElement($cancel_str)->getDecorator('data')
+                        ->setOption('closeOnly', true);
+                    $form->getElement($cancel_str)->getDecorator('row')
                         ->setOption('closeOnly', true);
                 }
             }
