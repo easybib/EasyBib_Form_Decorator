@@ -107,14 +107,14 @@ class EasyBib_Form_Decorator
                 'ViewHelper'
             ),
             array(
-                'Errors'
-            ),
-            array(
                 'Description',
                 array(
                     'tag'   => 'span',
                     'class' => 'hint'
                 )
+            ),
+            array(
+                'Errors'
             ),
             array(
                 'Label'
@@ -192,14 +192,14 @@ class EasyBib_Form_Decorator
         ),
         'div' => array(
             array(
-                'Errors'
-            ),
-            array(
                 'Description',
                 array(
                     'tag'   => 'span',
                     'class' => 'hint'
                 )
+            ),
+            array(
+                'Errors'
             ),
             array(
                 'Label'
