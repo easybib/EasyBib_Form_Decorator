@@ -137,7 +137,89 @@ class EasyBib_Form_Decorator
                 'Description',
                 array(
                     'tag'   => 'span',
-                    'class' => 'help-inline'
+                    'class' => 'help-block'
+                )
+            ),
+            array(
+                'BootstrapTag',
+                array(
+                    'class' => 'input'
+                )
+            ),
+            array(
+                'Label'
+            ),
+            array(
+                'HtmlTag',
+                array(
+                    'tag'   => 'div',
+                    'class' => 'clearfix'
+                )
+            )
+        )
+    );
+    
+    /**
+     * Captcha Decorator
+     *
+     * @staticvar array
+     */
+    protected static $_CaptchaDecorator = array(
+        'table' => array(
+            'Errors', 
+            array(
+                array(
+                    'data' => 'HtmlTag'
+                ),
+                array(
+                    'tag' => 'td'
+                )
+            ),
+            array(
+                'Label',
+                array(
+                    'tag' => 'td'
+                )
+            ),
+            array(
+                array(
+                    'row' => 'HtmlTag'
+                ),
+                array(
+                    'tag' => 'tr'
+                )
+            )
+        ),
+        'div' => array(
+            array(
+                'Errors'
+            ),
+            array(
+                'Description',
+                array(
+                    'tag'   => 'span',
+                    'class' => 'hint'
+                )
+            ),
+            array(
+                'Label'
+            ),
+            array(
+                'HtmlTag',
+                array(
+                    'tag' => 'div'
+                )
+            )
+        ),
+        'bootstrap' => array(
+            array(
+                'BootstrapErrors'
+            ),
+            array(
+                'Description',
+                array(
+                    'tag'   => 'span',
+                    'class' => 'help-block'
                 )
             ),
             array(
@@ -350,6 +432,9 @@ class EasyBib_Form_Decorator
         foreach ($form->getElements() as $e) {
             if ($e->getType() == 'Zend_Form_Element_Hidden') {
                 $e->setDecorators(self::$_HiddenDecorator[$format]);
+            }
+            if ($e->getType() == 'Zend_Form_Element_Captcha') {
+                $e->setDecorators(self::$_CaptchaDecorator[$format]);
             }
         }
     }
