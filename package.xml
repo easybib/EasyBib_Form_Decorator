@@ -25,11 +25,11 @@ The default is &apos;Twitter Bootstrap&apos;.
   <email>till@lagged.biz</email>
   <active>yes</active>
  </lead>
- <date>2011-10-09</date>
- <time>19:48:44</time>
+ <date>2011-10-11</date>
+ <time>17:04:52</time>
  <version>
-  <release>0.1.4</release>
-  <api>0.1.4</api>
+  <release>0.1.5</release>
+  <api>0.1.5</api>
  </version>
  <stability>
   <release>alpha</release>
@@ -37,7 +37,7 @@ The default is &apos;Twitter Bootstrap&apos;.
  </stability>
  <license uri="http://www.opensource.org/licenses/mit-license.php">MIT</license>
  <notes>
-Some Bugfixes
+Add MultiCheckbox Decorator style
  </notes>
  <contents>
   <dir baseinstalldir="/" name="/">
@@ -178,6 +178,21 @@ Fix Submit/Cancel Button to support setAttrib(class)
    <license uri="http://www.opensource.org/licenses/mit-license.php">MIT</license>
    <notes>
 Some Bugfixes
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>0.1.5</release>
+    <api>0.1.5</api>
+   </version>
+   <stability>
+    <release>alpha</release>
+    <api>alpha</api>
+   </stability>
+   <date>2011-10-11</date>
+   <license uri="http://www.opensource.org/licenses/mit-license.php">MIT</license>
+   <notes>
+Add MultiCheckbox Decorator style
    </notes>
   </release>
  </changelog>
