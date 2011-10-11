@@ -238,6 +238,118 @@ class EasyBib_Form_Decorator
             )
         )
     );
+    
+    /**
+     * Multi Decorator
+     *
+     * @staticvar array
+     */
+    protected static $_MultiDecorator = array(
+        'table' => array(
+            'ViewHelper',
+            array(
+                'Description',
+                array(
+                    'tag' => '',
+                )
+            ),
+            'Errors',
+            array(
+                array(
+                    'data' => 'HtmlTag'
+                ),
+                array(
+                    'tag' => 'td'
+                )
+            ),
+            array(
+                'Label',
+                array(
+                    'tag' => 'td'
+                )
+            ),
+            array(
+                array(
+                    'row' => 'HtmlTag'
+                ),
+                array(
+                    'tag' => 'tr'
+                )
+            )
+        ),
+        'div' => array(
+            array(
+                'ViewHelper'
+            ),
+            array(
+                'Description',
+                array(
+                    'tag'   => 'span',
+                    'class' => 'hint'
+                )
+            ),
+            array(
+                'Errors'
+            ),
+            array(
+                'Label'
+            ),
+            array(
+                'HtmlTag',
+                array(
+                    'tag' => 'div'
+                )
+            )
+        ),
+        'bootstrap' => array(
+            array(
+                'ViewHelper'
+            ),
+            array(
+                'BootstrapErrors'
+            ),
+            array(
+                'Description',
+                array(
+                    'tag'   => 'span',
+                    'class' => 'help-block'
+                )
+            ),
+            array(
+                array(
+                    'listelement' => 'HtmlTag'
+                ),
+                array(
+                    'tag'   => 'li',
+                )
+            ),
+            array(
+                array(
+                    'list' => 'HtmlTag'
+                ),
+                array(
+                    'tag'   => 'ul',
+                    'class' => 'inputs-list'
+                )
+            ),
+            array(
+                'BootstrapTag',
+                array(
+                    'class' => 'input'
+                )
+            ),
+            array(
+                'Label'
+            ),
+            array(
+                'HtmlTag',
+                array(
+                    'tag'   => 'div',
+                    'class' => 'clearfix'
+                )
+            )
+        )
+    );
 
     /**
      * Submit Element Decorator
@@ -475,13 +587,18 @@ class EasyBib_Form_Decorator
             }
         }
 
-        // set hidden input decorators
+        // set hidden, cpatcha, multi input decorators
         foreach ($form->getElements() as $e) {
             if ($e->getType() == 'Zend_Form_Element_Hidden') {
                 $e->setDecorators(self::$_HiddenDecorator[$format]);
             }
             if ($e->getType() == 'Zend_Form_Element_Captcha') {
                 $e->setDecorators(self::$_CaptchaDecorator[$format]);
+            }
+            if ($e->getType() == 'Zend_Form_Element_MultiCheckbox') {
+                $e->setDecorators(self::$_MultiDecorator[$format]);
+                $e->setSeparator('</li><li>');
+                //$e->setAttrib("escape", false);
             }
         }
     }
