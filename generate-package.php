@@ -5,12 +5,12 @@ ini_set('date.timezone', 'Europe/Berlin');
 require_once 'PEAR/PackageFileManager2.php';
 PEAR::setErrorHandling(PEAR_ERROR_DIE);
 
-$api_version     = '0.1.5';
+$api_version     = '0.1.6';
 $api_state       = 'alpha';
 
-$release_version = '0.1.5';
+$release_version = '0.1.6';
 $release_state   = 'alpha';
-$release_notes   = "Add MultiCheckbox Decorator style\n";
+$release_notes   = "Automation of buildBootstrapErrorDecorators call and fixes for description,errors\n";
 
 $description = "EasyBib_Form Decorator supports three modes: \n"
     . " * Table \n"
