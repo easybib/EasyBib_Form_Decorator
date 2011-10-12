@@ -129,14 +129,15 @@ class EasyBib_Form_Decorator
                 'ViewHelper'
             ),
             array(
-                'BootstrapErrors'
-            ),
-            array(
                 'Description',
                 array(
                     'tag'   => 'span',
-                    'class' => 'help-block'
+                    'class' => 'help-inline',
+                    'style' => 'color: #BFBFBF;'
                 )
+            ),
+            array(
+                'BootstrapErrors'
             ),
             array(
                 'BootstrapTag',
@@ -145,7 +146,10 @@ class EasyBib_Form_Decorator
                 )
             ),
             array(
-                'Label'
+                'Label',
+                array(
+                    'style' => 'color: #404040;'
+                )
             ),
             array(
                 'HtmlTag',
@@ -211,14 +215,15 @@ class EasyBib_Form_Decorator
         ),
         'bootstrap' => array(
             array(
-                'BootstrapErrors'
-            ),
-            array(
                 'Description',
                 array(
                     'tag'   => 'span',
-                    'class' => 'help-block'
+                    'class' => 'help-inline',
+                    'style' => 'color: #BFBFBF;'
                 )
+            ),
+            array(
+                'BootstrapErrors'
             ),
             array(
                 'BootstrapTag',
@@ -227,7 +232,10 @@ class EasyBib_Form_Decorator
                 )
             ),
             array(
-                'Label'
+                'Label',
+                array(
+                    'style' => 'color: #404040;'
+                )
             ),
             array(
                 'HtmlTag',
@@ -312,7 +320,8 @@ class EasyBib_Form_Decorator
                 'Description',
                 array(
                     'tag'   => 'span',
-                    'class' => 'help-block'
+                    'class' => 'help-blocks',
+                    'style' => 'color: #BFBFBF;'
                 )
             ),
             array(
@@ -339,7 +348,10 @@ class EasyBib_Form_Decorator
                 )
             ),
             array(
-                'Label'
+                'Label',
+                array(
+                    'style' => 'color: #404040;'
+                )
             ),
             array(
                 'HtmlTag',
