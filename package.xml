@@ -25,11 +25,11 @@ The default is &apos;Twitter Bootstrap&apos;.
   <email>till@lagged.biz</email>
   <active>yes</active>
  </lead>
- <date>2011-10-12</date>
- <time>16:23:35</time>
+ <date>2011-10-28</date>
+ <time>01:15:29</time>
  <version>
-  <release>0.1.6</release>
-  <api>0.1.6</api>
+  <release>0.1.7</release>
+  <api>0.1.7</api>
  </version>
  <stability>
   <release>alpha</release>
@@ -37,7 +37,7 @@ The default is &apos;Twitter Bootstrap&apos;.
  </stability>
  <license uri="http://www.opensource.org/licenses/mit-license.php">MIT</license>
  <notes>
-Automation of buildBootstrapErrorDecorators call and fixes for description,errors
+Multi Decorator usage for radio buttons
  </notes>
  <contents>
   <dir baseinstalldir="/" name="/">
@@ -208,6 +208,21 @@ Add MultiCheckbox Decorator style
    <license uri="http://www.opensource.org/licenses/mit-license.php">MIT</license>
    <notes>
 Automation of buildBootstrapErrorDecorators call and fixes for description,errors
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>0.1.7</release>
+    <api>0.1.7</api>
+   </version>
+   <stability>
+    <release>alpha</release>
+    <api>alpha</api>
+   </stability>
+   <date>2011-10-28</date>
+   <license uri="http://www.opensource.org/licenses/mit-license.php">MIT</license>
+   <notes>
+Multi Decorator usage for radio buttons
    </notes>
   </release>
  </changelog>
