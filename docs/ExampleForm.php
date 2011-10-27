@@ -57,6 +57,9 @@ class EasyBib_ExampleForm extends EasyBib_Form
         $userId      = new Zend_Form_Element_Hidden('id');
         $mail        = new Zend_Form_Element_Text('email');
         $name        = new Zend_Form_Element_Text('name');
+        $radio       = new Zend_Form_Element_Radio('radio');
+        $multi       = new Zend_Form_Element_MultiCheckbox('multi');
+        $captcha     = new Zend_Form_Element_Captcha('captcha', array('captcha' => 'Figlet'));
         $submit      = new Zend_Form_Element_Button('submit');
         $cancel      = new Zend_Form_Element_Button('cancel');
 
@@ -69,18 +72,39 @@ class EasyBib_ExampleForm extends EasyBib_Form
 
         $name->setLabel('Name:')
             ->setRequired(true);
+            
+        $radio->setLabel('Radio:')
+            ->setMultiOptions(array(
+                '1' => PHP_EOL . 'test1', 
+                '2' => PHP_EOL . 'test2'
+            ))
+            ->setRequired(true);
+        
+        $multiOptions = array(
+            'view'    => PHP_EOL . 'view',
+            'edit'    => PHP_EOL . 'edit', 
+            'comment' => PHP_EOL . 'comment'
+        );
+        $multi->setLabel('Multi:')
+            ->addValidator('Alpha')
+            ->setMultiOptions($multiOptions)
+            ->setRequired(true);
+
+        $captcha->setLabel('Captcha:')
+            ->setRequired(true)
+            ->setDescription("Das ist ein Test");
 
         $submit->setLabel('Save');
         $cancel->setLabel('Cancel');
 
         // add elements
         $this->addElements(array(
-            $userId, $mail, $name, $submit, $cancel
+            $userId, $mail, $name, $radio, $multi, $captcha, $submit, $cancel
         ));
 
         // add display group
         $this->addDisplayGroup(
-            array('email', 'name', 'password', 'submit', 'cancel'),
+            array('email', 'name', 'radio', 'multi', 'captcha', 'submit', 'cancel'),
             'users'
         );
         $this->getDisplayGroup('users')->setLegend('Add User');
