@@ -612,6 +612,10 @@ class EasyBib_Form_Decorator
                 $e->setSeparator('</li><li>');
                 //$e->setAttrib("escape", false);
             }
+            if ($e->getType() == 'Zend_Form_Element_Radio') {
+                $e->setDecorators(self::$_MultiDecorator[$format]);
+                $e->setSeparator('</li><li>');
+            }
         }
     }
 }
