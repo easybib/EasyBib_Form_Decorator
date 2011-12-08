@@ -551,8 +551,7 @@ class EasyBib_Form_Decorator
                     $attribs = array_unique(array_merge(array('btn'), $attribs));
                 }
                 $form->getElement($submit_str)
-                    ->setAttrib('class', $attribs)
-                    ->setAttrib('type', 'submit');
+                    ->setAttrib('class', $attribs);
                 if ($form->getElement($cancel_str)) {
                     $form->getElement($submit_str)->getDecorator('HtmlTag')
                         ->setOption('openOnly', true);
