@@ -550,9 +550,14 @@ class EasyBib_Form_Decorator
                     }
                     $attribs = array_unique(array_merge(array('btn'), $attribs));
                 }
-                $form->getElement($submit_str)
-                    ->setAttrib('class', $attribs)
-                    ->setAttrib('type', 'submit');
+                $submitBtn = $form->getElement($submit_str);
+                $submitBtn->setAttrib('class', $attribs);
+
+                if (($submitBtn instanceof Zend_Form_Element_Button)
+                    && $submitBtn->getAttrib('type') === null) {
+                    $submitBtn->setAttrib('type', 'submit');
+                }
+
                 if ($form->getElement($cancel_str)) {
                     $form->getElement($submit_str)->getDecorator('HtmlTag')
                         ->setOption('openOnly', true);
