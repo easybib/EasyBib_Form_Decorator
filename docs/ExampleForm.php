@@ -72,17 +72,17 @@ class EasyBib_ExampleForm extends EasyBib_Form
 
         $name->setLabel('Name:')
             ->setRequired(true);
-            
+
         $radio->setLabel('Radio:')
             ->setMultiOptions(array(
-                '1' => PHP_EOL . 'test1', 
+                '1' => PHP_EOL . 'test1',
                 '2' => PHP_EOL . 'test2'
             ))
             ->setRequired(true);
-        
+
         $multiOptions = array(
             'view'    => PHP_EOL . 'view',
-            'edit'    => PHP_EOL . 'edit', 
+            'edit'    => PHP_EOL . 'edit',
             'comment' => PHP_EOL . 'comment'
         );
         $multi->setLabel('Multi:')
