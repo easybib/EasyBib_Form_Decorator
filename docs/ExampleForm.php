@@ -39,7 +39,7 @@
  * @version  Release: @package_version@
  * @link     https://github.com/easybib/EasyBib_Form_Decorator
  */
-class EasyBib_ExampleForm extends EasyBib_Form
+class ExampleForm extends EasyBib_Form
 {
     /**
      * Configure user form.
