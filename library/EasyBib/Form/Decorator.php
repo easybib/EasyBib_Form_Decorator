@@ -131,8 +131,8 @@ class EasyBib_Form_Decorator
             array(
                 'Description',
                 array(
-                    'tag'   => 'span',
-                    'class' => 'help-inline',
+                    'tag'   => 'p',
+                    'class' => 'block',
                     'style' => 'color: #BFBFBF;'
                 )
             ),
@@ -142,7 +142,7 @@ class EasyBib_Form_Decorator
             array(
                 'BootstrapTag',
                 array(
-                    'class' => 'input'
+                    'class' => 'controls'
                 )
             ),
             array(
@@ -155,7 +155,7 @@ class EasyBib_Form_Decorator
                 'HtmlTag',
                 array(
                     'tag'   => 'div',
-                    'class' => 'clearfix'
+                    'class' => 'control-group'
                 )
             )
         )
@@ -217,8 +217,8 @@ class EasyBib_Form_Decorator
             array(
                 'Description',
                 array(
-                    'tag'   => 'span',
-                    'class' => 'help-inline',
+                    'tag'   => 'p',
+                    'class' => 'block',
                     'style' => 'color: #BFBFBF;'
                 )
             ),
@@ -319,8 +319,8 @@ class EasyBib_Form_Decorator
             array(
                 'Description',
                 array(
-                    'tag'   => 'span',
-                    'class' => 'help-blocks',
+                    'tag'   => 'p',
+                    'class' => 'block',
                     'style' => 'color: #BFBFBF;'
                 )
             ),
@@ -362,6 +362,104 @@ class EasyBib_Form_Decorator
             )
         )
     );
+    /**
+     * ZendX_Jquery Decorator
+     *
+     * @staticvar array
+     */
+    protected static $_JqueryElementDecorator = array(
+        'table' => array(
+            'UiWidgetElement',
+            array(
+                'Description',
+                array(
+                    'tag' => '',
+                )
+            ),
+            'Errors',
+            array(
+                array(
+                    'data' => 'HtmlTag'
+                ),
+                array(
+                    'tag' => 'td'
+                )
+            ),
+            array(
+                'Label',
+                array(
+                    'tag' => 'td'
+                )
+            ),
+            array(
+                array(
+                    'row' => 'HtmlTag'
+                ),
+                array(
+                    'tag' => 'tr'
+                )
+            )
+        ),
+        'div' => array(
+            array(
+                'UiWidgetElement'
+            ),
+            array(
+                'Description',
+                array(
+                    'tag'   => 'span',
+                    'class' => 'hint'
+                )
+            ),
+            array(
+                'Errors'
+            ),
+            array(
+                'Label'
+            ),
+            array(
+                'HtmlTag',
+                array(
+                    'tag' => 'div'
+                )
+            )
+        ),
+        'bootstrap' => array(
+            array(
+                'UiWidgetElement'
+            ),
+            array(
+                'Description',
+                array(
+                    'tag'   => 'p',
+                    'class' => 'block',
+                    'style' => 'color: #BFBFBF;'
+                )
+            ),
+            array(
+                'BootstrapErrors'
+            ),
+            array(
+                'BootstrapTag',
+                array(
+                    'class' => 'controls'
+                )
+            ),
+            array(
+                'Label',
+                array(
+                    'style' => 'color: #404040;'
+                )
+            ),
+            array(
+                'HtmlTag',
+                array(
+                    'tag'   => 'div',
+                    'class' => 'control-group'
+                )
+            )
+        )
+    );  
 
     /**
      * Submit Element Decorator
@@ -398,7 +496,7 @@ class EasyBib_Form_Decorator
                 'HtmlTag',
                 array(
                     'tag'   => 'div',
-                    'class' => 'actions',
+                    'class' => 'form-actions',
                     'openOnly' => false
                 )
             )
@@ -543,7 +641,7 @@ class EasyBib_Form_Decorator
             if ($format == self::BOOTSTRAP) {
                 $attribs = $form->getElement($submit_str)->getAttrib('class');
                 if (empty($attribs)) {
-                    $attribs = array('btn', 'primary');
+                    $attribs = array('btn', 'btn-primary');
                 } else {
                     if (is_string($attribs)) {
                         $attribs = array($attribs);
@@ -611,6 +709,9 @@ class EasyBib_Form_Decorator
             }
             if ($e->getType() == 'Zend_Form_Element_Captcha') {
                 $e->setDecorators(self::$_CaptchaDecorator[$format]);
+            }
+            if (is_subclass_of($e, "ZendX_JQuery_Form_Element_UiWidget")) {
+                $e->setDecorators(self::$_JqueryElementDecorator[$format]);
             }
             if ($e->getType() == 'Zend_Form_Element_MultiCheckbox') {
                 $e->setDecorators(self::$_MultiDecorator[$format]);
