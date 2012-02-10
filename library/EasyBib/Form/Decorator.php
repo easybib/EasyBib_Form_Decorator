@@ -398,7 +398,7 @@ class EasyBib_Form_Decorator
                 'HtmlTag',
                 array(
                     'tag'   => 'div',
-                    'class' => 'actions',
+                    'class' => 'form-actions',
                     'openOnly' => false
                 )
             )
@@ -543,7 +543,7 @@ class EasyBib_Form_Decorator
             if ($format == self::BOOTSTRAP) {
                 $attribs = $form->getElement($submit_str)->getAttrib('class');
                 if (empty($attribs)) {
-                    $attribs = array('btn', 'primary');
+                    $attribs = array('btn', 'btn-primary');
                 } else {
                     if (is_string($attribs)) {
                         $attribs = array($attribs);
