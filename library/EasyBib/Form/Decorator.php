@@ -131,8 +131,8 @@ class EasyBib_Form_Decorator
             array(
                 'Description',
                 array(
-                    'tag'   => 'span',
-                    'class' => 'help-inline',
+                    'tag'   => 'p',
+                    'class' => 'block',
                     'style' => 'color: #BFBFBF;'
                 )
             ),
@@ -217,8 +217,8 @@ class EasyBib_Form_Decorator
             array(
                 'Description',
                 array(
-                    'tag'   => 'span',
-                    'class' => 'help-inline',
+                    'tag'   => 'p',
+                    'class' => 'block',
                     'style' => 'color: #BFBFBF;'
                 )
             ),
@@ -319,8 +319,8 @@ class EasyBib_Form_Decorator
             array(
                 'Description',
                 array(
-                    'tag'   => 'span',
-                    'class' => 'help-blocks',
+                    'tag'   => 'p',
+                    'class' => 'block',
                     'style' => 'color: #BFBFBF;'
                 )
             ),
@@ -431,8 +431,8 @@ class EasyBib_Form_Decorator
             array(
                 'Description',
                 array(
-                    'tag'   => 'span',
-                    'class' => 'help-inline',
+                    'tag'   => 'p',
+                    'class' => 'block',
                     'style' => 'color: #BFBFBF;'
                 )
             ),
