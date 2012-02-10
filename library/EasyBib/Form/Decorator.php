@@ -142,7 +142,7 @@ class EasyBib_Form_Decorator
             array(
                 'BootstrapTag',
                 array(
-                    'class' => 'input'
+                    'class' => 'controls'
                 )
             ),
             array(
@@ -155,7 +155,7 @@ class EasyBib_Form_Decorator
                 'HtmlTag',
                 array(
                     'tag'   => 'div',
-                    'class' => 'clearfix'
+                    'class' => 'control-group'
                 )
             )
         )
