@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<package packagerversion="1.9.1" version="2.0" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0
+<package packagerversion="1.9.4" version="2.0" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0
     http://pear.php.net/dtd/tasks-1.0.xsd
     http://pear.php.net/dtd/package-2.0
     http://pear.php.net/dtd/package-2.0.xsd">
@@ -25,11 +25,11 @@ The default is &apos;Twitter Bootstrap&apos;.
   <email>till@lagged.biz</email>
   <active>yes</active>
  </lead>
- <date>2011-10-28</date>
- <time>01:15:29</time>
+ <date>2012-02-12</date>
+ <time>22:33:42</time>
  <version>
-  <release>0.1.7</release>
-  <api>0.1.7</api>
+  <release>0.3.0</release>
+  <api>0.3.0</api>
  </version>
  <stability>
   <release>alpha</release>
@@ -37,7 +37,7 @@ The default is &apos;Twitter Bootstrap&apos;.
  </stability>
  <license uri="http://www.opensource.org/licenses/mit-license.php">MIT</license>
  <notes>
-Multi Decorator usage for radio buttons
+First Bootstrap v2 support
  </notes>
  <contents>
   <dir baseinstalldir="/" name="/">
@@ -45,6 +45,15 @@ Multi Decorator usage for radio buttons
     <file baseinstalldir="/" name="ExampleController.php" role="doc" />
     <file baseinstalldir="/" name="ExampleForm.php" role="doc" />
    </dir> <!-- /docs -->
+   <dir name="examples">
+    <dir name="css">
+     <file baseinstalldir="/" name="bootstrap-responsive.min.css" role="data" />
+     <file baseinstalldir="/" name="bootstrap.min.css" role="data" />
+    </dir> <!-- /examples/css -->
+    <file baseinstalldir="/" name="DecoratorExample.php" role="php" />
+    <file baseinstalldir="/" name="ExampleForm.php" role="php" />
+    <file baseinstalldir="/" name="test.php" role="php" />
+   </dir> <!-- /examples -->
    <dir name="library">
     <dir name="EasyBib">
      <dir name="Form">
@@ -72,6 +81,11 @@ Multi Decorator usage for radio buttons
      </file>
     </dir> <!-- /library/EasyBib -->
    </dir> <!-- /library -->
+   <dir name="tests">
+    <file baseinstalldir="/" name="bootstrap.php" role="test" />
+    <file baseinstalldir="/" name="DecoratorBootstrapTest.php" role="test" />
+    <file baseinstalldir="/" name="phpunit.xml" role="test" />
+   </dir> <!-- /tests -->
    <file baseinstalldir="/" name="README.md" role="doc" />
   </dir> <!-- / -->
  </contents>
@@ -223,6 +237,51 @@ Automation of buildBootstrapErrorDecorators call and fixes for description,error
    <license uri="http://www.opensource.org/licenses/mit-license.php">MIT</license>
    <notes>
 Multi Decorator usage for radio buttons
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>0.1.8</release>
+    <api>0.1.8</api>
+   </version>
+   <stability>
+    <release>alpha</release>
+    <api>alpha</api>
+   </stability>
+   <date>2012-02-12</date>
+   <license uri="http://www.opensource.org/licenses/mit-license.php">MIT</license>
+   <notes>
+Minor fixes
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>0.2.0</release>
+    <api>0.2.0</api>
+   </version>
+   <stability>
+    <release>alpha</release>
+    <api>alpha</api>
+   </stability>
+   <date>2012-02-12</date>
+   <license uri="http://www.opensource.org/licenses/mit-license.php">MIT</license>
+   <notes>
+Support for FileElement and ZendX_JQuery_Form_Element_UiWidget
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>0.3.0</release>
+    <api>0.3.0</api>
+   </version>
+   <stability>
+    <release>alpha</release>
+    <api>alpha</api>
+   </stability>
+   <date>2012-02-12</date>
+   <license uri="http://www.opensource.org/licenses/mit-license.php">MIT</license>
+   <notes>
+First Bootstrap v2 support
    </notes>
   </release>
  </changelog>

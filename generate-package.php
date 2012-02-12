@@ -5,12 +5,12 @@ ini_set('date.timezone', 'Europe/Berlin');
 require_once 'PEAR/PackageFileManager2.php';
 PEAR::setErrorHandling(PEAR_ERROR_DIE);
 
-$api_version     = '0.1.7';
+$api_version     = '0.3.0';
 $api_state       = 'alpha';
 
-$release_version = '0.1.7';
+$release_version = '0.3.0';
 $release_state   = 'alpha';
-$release_notes   = "Multi Decorator usage for radio buttons\n";
+$release_notes   = "First Bootstrap v2 support\n";
 
 $description = "EasyBib_Form Decorator supports three modes: \n"
     . " * Table \n"
