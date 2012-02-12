@@ -53,6 +53,18 @@ class ExampleForm extends EasyBib_Form
         $this->setAction('/test/add');
         $this->setAttrib('id', 'testForm');
 
+        /**
+         * Add class to form for label alignment
+         *
+         * - Vertical   .form-vertical   (not required)	Stacked, left-aligned labels over controls (default)
+         * - Inline     .form-inline     Left-aligned label and inline-block controls for compact style
+         * - Search     .form-search     Extra-rounded text input for a typical search aesthetic
+         * - Horizontal .form-horizontal
+         *
+         * Use .form-horizontal to have same experience as with Bootstrap v1!
+         */
+        $this->setAttrib('class', 'form-horizontal');
+
         // create elements
         $userId      = new Zend_Form_Element_Hidden('id');
         $mail        = new Zend_Form_Element_Text('email');
