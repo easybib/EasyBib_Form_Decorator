@@ -594,6 +594,105 @@ class EasyBib_Form_Decorator
     );
 
     /**
+     * ZendX_Jquery Decorator
+     *
+     * @staticvar array
+     */
+    protected static $_JqueryElementDecorator = array(
+        'table' => array(
+            'UiWidgetElement',
+            array(
+                'Description',
+                array(
+                    'tag' => '',
+                )
+            ),
+            'Errors',
+            array(
+                array(
+                    'data' => 'HtmlTag'
+                ),
+                array(
+                    'tag' => 'td'
+                )
+            ),
+            array(
+                'Label',
+                array(
+                    'tag' => 'td'
+                )
+            ),
+            array(
+                array(
+                    'row' => 'HtmlTag'
+                ),
+                array(
+                    'tag' => 'tr'
+                )
+            )
+        ),
+        'div' => array(
+            array(
+                'UiWidgetElement'
+            ),
+            array(
+                'Description',
+                array(
+                    'tag'   => 'span',
+                    'class' => 'hint'
+                )
+            ),
+            array(
+                'Errors'
+            ),
+            array(
+                'Label'
+            ),
+            array(
+                'HtmlTag',
+                array(
+                    'tag' => 'div'
+                )
+            )
+        ),
+        'bootstrap' => array(
+            array(
+                'UiWidgetElement'
+            ),
+            array(
+                'Description',
+                array(
+                    'tag'   => 'span',
+                    'class' => 'help-block',
+                    'style' => 'color: #999;'
+                )
+            ),
+            array(
+                'BootstrapErrors'
+            ),
+            array(
+                'BootstrapTag',
+                array(
+                    'class' => 'controls'
+                )
+            ),
+            array(
+                'Label',
+                array(
+                    'class' => 'control-label'
+                )
+            ),
+            array(
+                'HtmlTag',
+                array(
+                    'tag'   => 'div',
+                    'class' => 'control-group'
+                )
+            )
+        )
+    );
+
+    /**
      * Set the form decorators by the given string format or by the default div style
      *
      * @param object $objForm        Zend_Form pointer-reference
@@ -692,6 +791,9 @@ class EasyBib_Form_Decorator
         foreach ($form->getElements() as $e) {
             if ($e->getType() == 'Zend_Form_Element_Hidden') {
                 $e->setDecorators(self::$_HiddenDecorator[$format]);
+            }
+            if (is_subclass_of($e, "ZendX_JQuery_Form_Element_UiWidget")) {
+                $e->setDecorators(self::$_JqueryElementDecorator[$format]);
             }
             if ($e->getType() == 'Zend_Form_Element_Captcha') {
                 $e->setDecorators(self::$_CaptchaDecorator[$format]);
