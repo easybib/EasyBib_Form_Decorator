@@ -1,0 +1,5 @@
+<phpunit debug="true" verbose="true" colors="true" bootstrap="./bootstrap.php">
+    <testsuite name="EasyBib Form Decorator">
+        <file>./DecoratorBootstrapTest.php</file>
+    </testsuite>
+</phpunit>
