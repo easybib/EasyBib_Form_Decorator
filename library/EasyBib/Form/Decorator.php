@@ -73,7 +73,7 @@ class EasyBib_Form_Decorator
             array(
                 'Description',
                 array(
-                    'tag' => '',
+                    'tag'   => ''
                 )
             ),
             'Errors',
@@ -129,38 +129,38 @@ class EasyBib_Form_Decorator
                 'ViewHelper'
             ),
             array(
-                'Description',
-                array(
-                    'tag'   => 'span',
-                    'class' => 'help-inline',
-                    'style' => 'color: #BFBFBF;'
-                )
+                'BootstrapErrors'
             ),
             array(
-                'BootstrapErrors'
+                'Description',
+                array(
+                    'tag'   => 'p',
+                    'class' => 'help-block',
+                    'style' => 'color: #999;'
+                )
             ),
             array(
                 'BootstrapTag',
                 array(
-                    'class' => 'input'
+                    'class' => 'controls'
                 )
             ),
             array(
                 'Label',
                 array(
-                    'style' => 'color: #404040;'
+                    'class' => 'control-label'
                 )
             ),
             array(
                 'HtmlTag',
                 array(
                     'tag'   => 'div',
-                    'class' => 'clearfix'
+                    'class' => 'control-group'
                 )
             )
         )
     );
-    
+
     /**
      * Captcha Decorator
      *
@@ -168,7 +168,7 @@ class EasyBib_Form_Decorator
      */
     protected static $_CaptchaDecorator = array(
         'table' => array(
-            'Errors', 
+            'Errors',
             array(
                 array(
                     'data' => 'HtmlTag'
@@ -215,38 +215,140 @@ class EasyBib_Form_Decorator
         ),
         'bootstrap' => array(
             array(
-                'Description',
-                array(
-                    'tag'   => 'span',
-                    'class' => 'help-inline',
-                    'style' => 'color: #BFBFBF;'
-                )
+                'BootstrapErrors'
             ),
             array(
-                'BootstrapErrors'
+                'Description',
+                array(
+                    'tag'   => 'p',
+                    'class' => 'help-block',
+                    'style' => 'color: #999;'
+                )
             ),
             array(
                 'BootstrapTag',
                 array(
-                    'class' => 'input'
+                    'class' => 'controls'
                 )
             ),
             array(
                 'Label',
                 array(
-                    'style' => 'color: #404040;'
+                    'class' => 'control-label'
                 )
             ),
             array(
                 'HtmlTag',
                 array(
                     'tag'   => 'div',
-                    'class' => 'clearfix'
+                    'class' => 'control-group'
                 )
             )
         )
     );
-    
+
+    /**
+     * Captcha Decorator
+     *
+     * @staticvar array
+     */
+    protected static $_FileDecorator = array(
+        'table' => array(
+            'File',
+            array(
+                'Description',
+                array(
+                    'tag'   => ''
+                )
+            ),
+            'Errors',
+            array(
+                array(
+                    'data' => 'HtmlTag'
+                ),
+                array(
+                    'tag' => 'td'
+                )
+            ),
+            array(
+                'Label',
+                array(
+                    'tag' => 'td'
+                )
+            ),
+            array(
+                array(
+                    'row' => 'HtmlTag'
+                ),
+                array(
+                    'tag' => 'tr'
+                )
+            )
+        ),
+        'div' => array(
+            array(
+                'File'
+            ),
+            array(
+                'Description',
+                array(
+                    'tag'   => 'span',
+                    'class' => 'hint'
+                )
+            ),
+            array(
+                'Errors'
+            ),
+            array(
+                'Label'
+            ),
+            array(
+                'HtmlTag',
+                array(
+                    'tag' => 'div'
+                )
+            )
+        ),
+        'bootstrap' => array(
+            array(
+                'File',
+                array(
+                    'class' => 'input-file'
+                )
+            ),
+            array(
+                'BootstrapErrors'
+            ),
+            array(
+                'Description',
+                array(
+                    'tag'   => 'p',
+                    'class' => 'help-block',
+                    'style' => 'color: #999;'
+                )
+            ),
+            array(
+                'BootstrapTag',
+                array(
+                    'class' => 'controls'
+                )
+            ),
+            array(
+                'Label',
+                array(
+                    'class' => 'control-label'
+                )
+            ),
+            array(
+                'HtmlTag',
+                array(
+                    'tag'   => 'div',
+                    'class' => 'control-group'
+                )
+            )
+        )
+    );
+
     /**
      * Multi Decorator
      *
@@ -319,45 +421,27 @@ class EasyBib_Form_Decorator
             array(
                 'Description',
                 array(
-                    'tag'   => 'span',
-                    'class' => 'help-blocks',
-                    'style' => 'color: #BFBFBF;'
-                )
-            ),
-            array(
-                array(
-                    'listelement' => 'HtmlTag'
-                ),
-                array(
-                    'tag'   => 'li',
-                )
-            ),
-            array(
-                array(
-                    'list' => 'HtmlTag'
-                ),
-                array(
-                    'tag'   => 'ul',
-                    'class' => 'inputs-list'
+                    'tag'   => 'p',
+                    'class' => 'help-block',
                 )
             ),
             array(
                 'BootstrapTag',
                 array(
-                    'class' => 'input'
+                    'class' => 'controls'
                 )
             ),
             array(
                 'Label',
                 array(
-                    'style' => 'color: #404040;'
+                    'class' => 'control-label'
                 )
             ),
             array(
                 'HtmlTag',
                 array(
                     'tag'   => 'div',
-                    'class' => 'clearfix'
+                    'class' => 'control-group'
                 )
             )
         )
@@ -370,7 +454,7 @@ class EasyBib_Form_Decorator
      */
     protected static $_SubmitDecorator = array(
         'table' => array(
-            'ViewHelper', 
+            'ViewHelper',
             array(
                 array(
                     'data' => 'HtmlTag'
@@ -398,7 +482,7 @@ class EasyBib_Form_Decorator
                 'HtmlTag',
                 array(
                     'tag'   => 'div',
-                    'class' => 'actions',
+                    'class' => 'form-actions',
                     'openOnly' => false
                 )
             )
@@ -412,7 +496,7 @@ class EasyBib_Form_Decorator
      */
     protected static $_ResetDecorator = array(
         'table' => array(
-            'ViewHelper', 
+            'ViewHelper',
             array(
                 array(
                     'data' => 'HtmlTag'
@@ -543,7 +627,7 @@ class EasyBib_Form_Decorator
             if ($format == self::BOOTSTRAP) {
                 $attribs = $form->getElement($submit_str)->getAttrib('class');
                 if (empty($attribs)) {
-                    $attribs = array('btn', 'primary');
+                    $attribs = array('btn', 'btn-primary');
                 } else {
                     if (is_string($attribs)) {
                         $attribs = array($attribs);
@@ -604,7 +688,7 @@ class EasyBib_Form_Decorator
             }
         }
 
-        // set hidden, cpatcha, multi input decorators
+        // set hidden, captcha, multi input decorators, file
         foreach ($form->getElements() as $e) {
             if ($e->getType() == 'Zend_Form_Element_Hidden') {
                 $e->setDecorators(self::$_HiddenDecorator[$format]);
@@ -614,12 +698,17 @@ class EasyBib_Form_Decorator
             }
             if ($e->getType() == 'Zend_Form_Element_MultiCheckbox') {
                 $e->setDecorators(self::$_MultiDecorator[$format]);
-                $e->setSeparator('</li><li>');
+                $e->setSeparator('');
+                $e->setAttrib('label_class', 'checkbox');
                 //$e->setAttrib("escape", false);
             }
             if ($e->getType() == 'Zend_Form_Element_Radio') {
                 $e->setDecorators(self::$_MultiDecorator[$format]);
-                $e->setSeparator('</li><li>');
+                $e->setSeparator('');
+                $e->setAttrib('label_class', 'radio');
+            }
+            if ($e->getType() == 'Zend_Form_Element_File') {
+                $e->setDecorators(self::$_FileDecorator[$format]);
             }
         }
     }
