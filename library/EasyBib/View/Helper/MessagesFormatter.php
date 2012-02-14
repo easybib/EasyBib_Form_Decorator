@@ -53,11 +53,11 @@ class EasyBib_View_Helper_MessagesFormatter extends Zend_View_Helper_Abstract
      * -> second child is printed message
      *
      * @param  array  $messages
-     * @param  string $tag (default=p)
-     * @param  string $format (default=blueprint)
+     * @param  string $tag (default=div)
+     * @param  string $format (default=bootstrap)
      * @return string
      */
-    public function messagesFormatter($messages, $tag = 'p', $format = 'bootstrap')
+    public function messagesFormatter($messages, $tag = 'div', $format = 'bootstrap')
     {
         $return = '';
 
@@ -66,51 +66,33 @@ class EasyBib_View_Helper_MessagesFormatter extends Zend_View_Helper_Abstract
                 foreach ($messages AS $msg) {
                     if (is_array($msg)) {
                         if ($format == 'bootstrap') {
-                            $class = 'class="alert-message '.$msg[0].'"';
+                            $class = 'class="alert alert-'.$msg[0].'"';
                         } else {
-                            $class = 'class="notice"';
+                            $class = 'class="'.$msg[0].'"';
                         }
                         $return .= '<'.$tag.' '.$class.'>';
-                        if ($format == 'bootstrap') {
-                            $return .= '<p>';
-                        }
                         $return .= $msg[1];
-                        if ($format == 'bootstrap') {
-                            $return .= '</p>';
-                        }
                         $return .= '</'.$tag.'>';
                     }
                 }
             } else {
                 if ($format == 'bootstrap') {
-                    $class = 'class="alert-message '.$messages[0].'"';
+                    $class = 'class="alert alert-'.$messages[0].'"';
                 } else {
-                    $class = 'class="notice"';
+                    $class = 'class="'.$messages[0].'"';
                 }
                 $return .= '<'.$tag.' '.$class.'>';
-                if ($format == 'bootstrap') {
-                    $return .= '<p>';
-                }
                 $return .= $messages[1];
-                if ($format == 'bootstrap') {
-                    $return .= '</p>';
-                }
                 $return .= '</'.$tag.'>';
             }
         } else if (is_string($messages)) {
             if ($format == 'bootstrap') {
-                $class = 'class="alert-message warning"';
+                $class = 'class="alert alert-warning"';
             } else {
                 $class = 'class="notice"';
             }
             $return .= '<'.$tag.' '.$class.'>';
-            if ($format == 'bootstrap') {
-              $return .= '<p>';
-            }
             $return .= $messages;
-            if ($format == 'bootstrap') {
-              $return .= '</p>';
-            }
             $return .= '</'.$tag.'>';
         }
 
