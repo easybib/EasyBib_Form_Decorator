@@ -5,12 +5,12 @@ ini_set('date.timezone', 'Europe/Berlin');
 require_once 'PEAR/PackageFileManager2.php';
 PEAR::setErrorHandling(PEAR_ERROR_DIE);
 
-$api_version     = '0.3.0';
+$api_version     = '0.3.1';
 $api_state       = 'alpha';
 
-$release_version = '0.3.0';
+$release_version = '0.3.1';
 $release_state   = 'alpha';
-$release_notes   = "First Bootstrap v2 support\n";
+$release_notes   = "Changes for MessageFormatter helper to work nice with Bootstrap 2\n";
 
 $description = "EasyBib_Form Decorator supports three modes: \n"
     . " * Table \n"

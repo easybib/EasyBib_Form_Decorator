@@ -25,11 +25,11 @@ The default is &apos;Twitter Bootstrap&apos;.
   <email>till@lagged.biz</email>
   <active>yes</active>
  </lead>
- <date>2012-02-12</date>
- <time>22:33:42</time>
+ <date>2012-02-14</date>
+ <time>16:18:25</time>
  <version>
-  <release>0.3.0</release>
-  <api>0.3.0</api>
+  <release>0.3.1</release>
+  <api>0.3.1</api>
  </version>
  <stability>
   <release>alpha</release>
@@ -37,7 +37,7 @@ The default is &apos;Twitter Bootstrap&apos;.
  </stability>
  <license uri="http://www.opensource.org/licenses/mit-license.php">MIT</license>
  <notes>
-First Bootstrap v2 support
+Changes for MessageFormatter helper to work nice with Bootstrap 2
  </notes>
  <contents>
   <dir baseinstalldir="/" name="/">
@@ -84,6 +84,7 @@ First Bootstrap v2 support
    <dir name="tests">
     <file baseinstalldir="/" name="bootstrap.php" role="test" />
     <file baseinstalldir="/" name="DecoratorBootstrapTest.php" role="test" />
+    <file baseinstalldir="/" name="MessagesFormatterTest.php" role="test" />
     <file baseinstalldir="/" name="phpunit.xml" role="test" />
    </dir> <!-- /tests -->
    <file baseinstalldir="/" name="README.md" role="doc" />
@@ -282,6 +283,21 @@ Support for FileElement and ZendX_JQuery_Form_Element_UiWidget
    <license uri="http://www.opensource.org/licenses/mit-license.php">MIT</license>
    <notes>
 First Bootstrap v2 support
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>0.3.1</release>
+    <api>0.3.1</api>
+   </version>
+   <stability>
+    <release>alpha</release>
+    <api>alpha</api>
+   </stability>
+   <date>2012-02-14</date>
+   <license uri="http://www.opensource.org/licenses/mit-license.php">MIT</license>
+   <notes>
+Changes for MessageFormatter helper to work nice with Bootstrap 2
    </notes>
   </release>
  </changelog>
