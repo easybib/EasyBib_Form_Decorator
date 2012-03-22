@@ -82,8 +82,8 @@ class EasyBib_Form extends Zend_Form
     }
 
     /**
-    * Build Bootstrap Error Decorators
-    */
+     * Build Bootstrap Error Decorators
+     */
     public function buildBootstrapErrorDecorators() 
     {
         $subForms = $this->getSubForms();
@@ -94,11 +94,13 @@ class EasyBib_Form extends Zend_Form
             }
             if (array_key_exists($key, $subForms)) {
                 $subForm = $this->getSubForm($key);
-
-                foreach ($errors as $subKey => $subError) {
+                
+                foreach ($errors as $subKey => $subErrors) {
+                    if (empty($subErrors)) {
+                        continue;
+                    }
                     $this->_setClassToAnElement($subForm->getElement($subKey), $styleClass);
                 }
-
             } else {
                 $this->_setClassToAnElement($this->getElement($key), $styleClass);
             }   
