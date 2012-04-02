@@ -84,17 +84,40 @@ class EasyBib_Form extends Zend_Form
     /**
      * Build Bootstrap Error Decorators
      */
-    public function buildBootstrapErrorDecorators() {
+    public function buildBootstrapErrorDecorators() 
+    {
+        $subForms = $this->getSubForms();
+        $styleClass = 'error';
         foreach ($this->getErrors() AS $key=>$errors) {
-            $htmlTagDecorator = $this->getElement($key)->getDecorator('HtmlTag');
-            if (empty($htmlTagDecorator)) {
-                continue;
-            }
             if (empty($errors)) {
                 continue;
             }
-            $class = $htmlTagDecorator->getOption('class');
-            $htmlTagDecorator->setOption('class', $class . ' error');
+            if (array_key_exists($key, $subForms)) {
+                $subForm = $this->getSubForm($key);
+                
+                foreach ($errors as $subKey => $subErrors) {
+                    if (empty($subErrors)) {
+                        continue;
+                    }
+                    $this->_setClassToAnElement($subForm->getElement($subKey), $styleClass);
+                }
+            } else {
+                $this->_setClassToAnElement($this->getElement($key), $styleClass);
+            }   
         }
+    }
+
+    /**
+    * Set an error class into element HtmlTag decorator
+    */
+    protected function _setClassToAnElement(Zend_Form_Element $element, $styleClass)
+    {
+        $htmlTagDecorator = $element->getDecorator('HtmlTag');       
+        
+        if (!empty($htmlTagDecorator)) {
+            $class = $htmlTagDecorator->getOption('class');
+            $htmlTagDecorator->setOption('class', $class . ' ' . $styleClass);
+        }
+
     }
 }
