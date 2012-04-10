@@ -23,7 +23,7 @@ $form->setView($view);
 $form->setMethod('POST');
 $form->setAction('DecoratorExample.php');
 $form->setAttrib('id', 'testForm');
-$form->setAttrib('class', 'form-horizontal');
+$form->setAttrib('class', 'well');
 
 if (!empty($_POST)) {
     $form->isValid($_POST);
@@ -42,6 +42,6 @@ if (!empty($_POST)) {
     <body>
        <h1>TestForm</h1>
        <?php echo $form->render(); ?>
-       
+
     </body>
 </html>

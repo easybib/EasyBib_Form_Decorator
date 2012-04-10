@@ -37,7 +37,7 @@ class ExampleForm extends EasyBib_Form
 
         $multiOptions = array(
             'view'    => PHP_EOL . 'view',
-            'edit'    => PHP_EOL . 'edit', 
+            'edit'    => PHP_EOL . 'edit',
             'comment' => PHP_EOL . 'comment'
         );
         $multi->setLabel('Multi:')
@@ -65,7 +65,7 @@ class ExampleForm extends EasyBib_Form
         );
 
         // set decorators
-        EasyBib_Form_Decorator::setFormDecorator($this, EasyBib_Form_Decorator::BOOTSTRAP, 'submit', 'cancel');
+        EasyBib_Form_Decorator::setFormDecorator($this, EasyBib_Form_Decorator::BOOTSTRAP_MINIMAL, 'submit', 'cancel');
 
     }
 
