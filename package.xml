@@ -6,10 +6,12 @@
  <name>EasyBib_Form_Decorator</name>
  <channel>easybib.github.com/pear</channel>
  <summary>A set of decorators for Zend_Form</summary>
- <description>EasyBib_Form Decorator supports three modes: 
+ <description>EasyBib_Form Decorator supports four modes: 
  * Table 
  * Div 
  * Twitter Bootstrap 
+
+ * Twitter Bootstrap Minimal 
 
 The default is &apos;Twitter Bootstrap&apos;.
  </description>
@@ -25,11 +27,11 @@ The default is &apos;Twitter Bootstrap&apos;.
   <email>till@lagged.biz</email>
   <active>yes</active>
  </lead>
- <date>2012-02-14</date>
- <time>16:18:25</time>
+ <date>2012-04-10</date>
+ <time>15:56:38</time>
  <version>
-  <release>0.3.1</release>
-  <api>0.3.1</api>
+  <release>0.3.2</release>
+  <api>0.3.2</api>
  </version>
  <stability>
   <release>alpha</release>
@@ -37,7 +39,7 @@ The default is &apos;Twitter Bootstrap&apos;.
  </stability>
  <license uri="http://www.opensource.org/licenses/mit-license.php">MIT</license>
  <notes>
-Changes for MessageFormatter helper to work nice with Bootstrap 2
+Add BOOTSTRAP_MINIMAL style for cleaner markup usage of Bootstrap 2
  </notes>
  <contents>
   <dir baseinstalldir="/" name="/">
@@ -86,6 +88,7 @@ Changes for MessageFormatter helper to work nice with Bootstrap 2
     <file baseinstalldir="/" name="DecoratorBootstrapTest.php" role="test" />
     <file baseinstalldir="/" name="MessagesFormatterTest.php" role="test" />
     <file baseinstalldir="/" name="phpunit.xml" role="test" />
+    <file baseinstalldir="/" name="TestForm.php" role="test" />
    </dir> <!-- /tests -->
    <file baseinstalldir="/" name="README.md" role="doc" />
   </dir> <!-- / -->
@@ -298,6 +301,21 @@ First Bootstrap v2 support
    <license uri="http://www.opensource.org/licenses/mit-license.php">MIT</license>
    <notes>
 Changes for MessageFormatter helper to work nice with Bootstrap 2
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>0.3.2</release>
+    <api>0.3.2</api>
+   </version>
+   <stability>
+    <release>alpha</release>
+    <api>alpha</api>
+   </stability>
+   <date>2012-04-10</date>
+   <license uri="http://www.opensource.org/licenses/mit-license.php">MIT</license>
+   <notes>
+Add BOOTSTRAP_MINIMAL style for cleaner markup usage of Bootstrap 2
    </notes>
   </release>
  </changelog>

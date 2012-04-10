@@ -5,17 +5,18 @@ ini_set('date.timezone', 'Europe/Berlin');
 require_once 'PEAR/PackageFileManager2.php';
 PEAR::setErrorHandling(PEAR_ERROR_DIE);
 
-$api_version     = '0.3.1';
+$api_version     = '0.3.2';
 $api_state       = 'alpha';
 
-$release_version = '0.3.1';
+$release_version = '0.3.2';
 $release_state   = 'alpha';
-$release_notes   = "Changes for MessageFormatter helper to work nice with Bootstrap 2\n";
+$release_notes   = "Add BOOTSTRAP_MINIMAL style for cleaner markup usage of Bootstrap 2\n";
 
-$description = "EasyBib_Form Decorator supports three modes: \n"
+$description = "EasyBib_Form Decorator supports four modes: \n"
     . " * Table \n"
     . " * Div \n"
     . " * Twitter Bootstrap \n\n"
+    . " * Twitter Bootstrap Minimal \n\n"
     . "The default is 'Twitter Bootstrap'.\n";
 
 $package = new PEAR_PackageFileManager2();
