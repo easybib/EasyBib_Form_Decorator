@@ -62,6 +62,8 @@ class EasyBib_Form_Decorator
 
     const BOOTSTRAP = 'bootstrap';
 
+    const BOOTSTRAP_MINIMAL = 'bootstrap_minimal';
+
     /**
      * Element Decorator
      *
@@ -158,6 +160,25 @@ class EasyBib_Form_Decorator
                     'class' => 'control-group'
                 )
             )
+        ),
+        'bootstrap_minimal' => array(
+            array(
+                'ViewHelper'
+            ),
+            array(
+                'BootstrapErrors'
+            ),
+            array(
+                'Description',
+                array(
+                    'tag'   => 'p',
+                    'class' => 'help-block',
+                    'style' => 'color: #999;'
+                )
+            ),
+            array(
+                'Label'
+            )
         )
     );
 
@@ -243,6 +264,22 @@ class EasyBib_Form_Decorator
                     'tag'   => 'div',
                     'class' => 'control-group'
                 )
+            )
+        ),
+        'bootstrap_minimal' => array(
+            array(
+                'BootstrapErrors'
+            ),
+            array(
+                'Description',
+                array(
+                    'tag'   => 'p',
+                    'class' => 'help-block',
+                    'style' => 'color: #999;'
+                )
+            ),
+            array(
+                'Label'
             )
         )
     );
@@ -346,6 +383,28 @@ class EasyBib_Form_Decorator
                     'class' => 'control-group'
                 )
             )
+        ),
+        'bootstrap_minimal' => array(
+            array(
+                'File',
+                array(
+                    'class' => 'input-file'
+                )
+            ),
+            array(
+                'BootstrapErrors'
+            ),
+            array(
+                'Description',
+                array(
+                    'tag'   => 'p',
+                    'class' => 'help-block',
+                    'style' => 'color: #999;'
+                )
+            ),
+            array(
+                'Label'
+            )
         )
     );
 
@@ -444,6 +503,24 @@ class EasyBib_Form_Decorator
                     'class' => 'control-group'
                 )
             )
+        ),
+        'bootstrap_minimal' => array(
+            array(
+                'ViewHelper'
+            ),
+            array(
+                'BootstrapErrors'
+            ),
+            array(
+                'Description',
+                array(
+                    'tag'   => 'p',
+                    'class' => 'help-block',
+                )
+            ),
+            array(
+                'Label'
+            )
         )
     );
 
@@ -486,6 +563,9 @@ class EasyBib_Form_Decorator
                     'openOnly' => false
                 )
             )
+        ),
+        'bootstrap_minimal' => array(
+            'ViewHelper'
         )
     );
 
@@ -525,6 +605,9 @@ class EasyBib_Form_Decorator
                     'closeOnly' => false
                 )
             )
+        ),
+        'bootstrap_minimal' => array(
+            'ViewHelper'
         )
     );
 
@@ -541,6 +624,9 @@ class EasyBib_Form_Decorator
             'ViewHelper'
         ),
         'bootstrap' => array(
+            'ViewHelper'
+        ),
+        'bootstrap_minimal' => array(
             'ViewHelper'
         )
     );
@@ -560,6 +646,10 @@ class EasyBib_Form_Decorator
             'Form'
         ),
         'bootstrap' => array(
+            'FormElements',
+            'Form'
+        ),
+        'bootstrap_minimal' => array(
             'FormElements',
             'Form'
         )
@@ -587,6 +677,10 @@ class EasyBib_Form_Decorator
             'Fieldset'
         ),
         'bootstrap' => array(
+            'FormElements',
+            'Fieldset'
+        ),
+        'bootstrap_minimal' => array(
             'FormElements',
             'Fieldset'
         )
@@ -689,6 +783,41 @@ class EasyBib_Form_Decorator
                     'class' => 'control-group'
                 )
             )
+        ),
+        'bootstrap_minimal' => array(
+            array(
+                'UiWidgetElement'
+            ),
+            array(
+                'Description',
+                array(
+                    'tag'   => 'span',
+                    'class' => 'help-block',
+                    'style' => 'color: #999;'
+                )
+            ),
+            array(
+                'BootstrapErrors'
+            ),
+            array(
+                'BootstrapTag',
+                array(
+                    'class' => 'controls'
+                )
+            ),
+            array(
+                'Label',
+                array(
+                    'class' => 'control-label'
+                )
+            ),
+            array(
+                'HtmlTag',
+                array(
+                    'tag'   => 'div',
+                    'class' => 'control-group'
+                )
+            )
         )
     );
 
@@ -699,93 +828,12 @@ class EasyBib_Form_Decorator
      * @param string $constFormat    Project_Plugin_FormDecoratorDefinition constants
      * @return NULL
      */
-    public static function setFormDecorator(Zend_Form $form, $format = self::BOOTSTRAP, $submit_str = 'submit', $cancel_str = 'cancel') {
-        /**
-         * - disable default decorators
-         * - set form & displaygroup decorators
-         */
-        $form->setDisableLoadDefaultDecorators(true);
-        $form->setDisplayGroupDecorators(self::$_DisplayGroupDecorator[$format]);
-        $form->setDecorators(self::$_FormDecorator[$format]);
+    public static function setFormDecorator(Zend_Form $form, $format = self::BOOTSTRAP, $submit_str = 'submit', $cancel_str = 'cancel')
+    {
 
-        // set needed prefix path for bootstrap decorators
-        if ($format == self::BOOTSTRAP) {
-            $form->addElementPrefixPath(
-                'EasyBib_Form_Decorator',
-                'EasyBib/Form/Decorator',
-                Zend_Form::DECORATOR
-            );
-        }
+        self::setFormDefaults($form, $format);
 
-        // set form element decorators
-        $form->setElementDecorators(self::$_ElementDecorator[$format]);
-
-        // set submit button decorators
-        if ($form->getElement($submit_str)) {
-            $form->getElement($submit_str)->setDecorators(self::$_SubmitDecorator[$format]);
-            if ($format == self::BOOTSTRAP) {
-                $attribs = $form->getElement($submit_str)->getAttrib('class');
-                if (empty($attribs)) {
-                    $attribs = array('btn', 'btn-primary');
-                } else {
-                    if (is_string($attribs)) {
-                        $attribs = array($attribs);
-                    }
-                    $attribs = array_unique(array_merge(array('btn'), $attribs));
-                }
-                $submitBtn = $form->getElement($submit_str);
-                $submitBtn->setAttrib('class', $attribs);
-
-                if (($submitBtn instanceof Zend_Form_Element_Button)
-                    && $submitBtn->getAttrib('type') === null) {
-                    $submitBtn->setAttrib('type', 'submit');
-                }
-
-                if ($form->getElement($cancel_str)) {
-                    $form->getElement($submit_str)->getDecorator('HtmlTag')
-                        ->setOption('openOnly', true);
-                }
-            }
-            if ($format == self::TABLE) {
-                if ($form->getElement($cancel_str)) {
-                    $form->getElement($submit_str)->getDecorator('data')
-                        ->setOption('openOnly', true);
-                    $form->getElement($submit_str)->getDecorator('row')
-                        ->setOption('openOnly', true);
-                }
-            }
-        }
-
-        // set cancel button decorators
-        if ($form->getElement($cancel_str)) {
-            $form->getElement($cancel_str)->setDecorators(self::$_ResetDecorator[$format]);
-            if ($format == self::BOOTSTRAP) {
-                $attribs = $form->getElement($cancel_str)->getAttrib('class');
-                if (empty($attribs)) {
-                    $attribs = array('btn');
-                } else {
-                    if (is_string($attribs)) {
-                        $attribs = array($attribs);
-                    }
-                    $attribs = array_unique(array_merge(array('btn'), $attribs));
-                }
-                $form->getElement($cancel_str)
-                    ->setAttrib('class', $attribs)
-                    ->setAttrib('type', 'reset');
-                if ($form->getElement($submit_str)) {
-                    $form->getElement($cancel_str)->getDecorator('HtmlTag')
-                        ->setOption('closeOnly', true);
-                }
-            }
-            if ($format == self::TABLE) {
-                if ($form->getElement($submit_str)) {
-                    $form->getElement($cancel_str)->getDecorator('data')
-                        ->setOption('closeOnly', true);
-                    $form->getElement($cancel_str)->getDecorator('row')
-                        ->setOption('closeOnly', true);
-                }
-            }
-        }
+        self::setButtonDecorators($form, $format, $submit_str, $cancel_str);
 
         // set hidden, captcha, multi input decorators, file
         foreach ($form->getElements() as $e) {
@@ -811,6 +859,116 @@ class EasyBib_Form_Decorator
             }
             if ($e->getType() == 'Zend_Form_Element_File') {
                 $e->setDecorators(self::$_FileDecorator[$format]);
+            }
+        }
+    }
+
+    /**
+     * Set Form defaults
+     * - disable default decorators
+     * - set form & displaygroup decorators
+     * - set needed prefix path for bootstrap decorators
+     * - set form element decorators
+     *
+     * @param  Zend_Form $form
+     * @param  string    $format
+     * @return void
+     */
+    protected function setFormDefaults($form, $format)
+    {
+        $form->setDisableLoadDefaultDecorators(true);
+        $form->setDisplayGroupDecorators(self::$_DisplayGroupDecorator[$format]);
+        $form->setDecorators(self::$_FormDecorator[$format]);
+
+        if (self::BOOTSTRAP == $format || self::BOOTSTRAP_MINIMAL == $format) {
+            $form->addElementPrefixPath(
+                'EasyBib_Form_Decorator',
+                'EasyBib/Form/Decorator',
+                Zend_Form::DECORATOR
+            );
+        }
+
+        $form->setElementDecorators(self::$_ElementDecorator[$format]);
+
+        return;
+    }
+
+    /**
+     * Set Button Decorators
+     *
+     * @param  Zend_Form $form
+     * @param  string    $format
+     * @param  string    $submit_str
+     * @param  string    $cancel_str
+     * @return void
+     */
+    protected function setButtonDecorators($form, $format, $submit_str, $cancel_str)
+    {
+        // set submit button decorators
+        if ($form->getElement($submit_str)) {
+            $form->getElement($submit_str)->setDecorators(self::$_SubmitDecorator[$format]);
+            if (self::BOOTSTRAP == $format || self::BOOTSTRAP_MINIMAL == $format) {
+                $attribs = $form->getElement($submit_str)->getAttrib('class');
+                if (empty($attribs)) {
+                    $attribs = array('btn', 'btn-primary');
+                } else {
+                    if (is_string($attribs)) {
+                        $attribs = array($attribs);
+                    }
+                    $attribs = array_unique(array_merge(array('btn'), $attribs));
+                }
+                $submitBtn = $form->getElement($submit_str);
+                $submitBtn->setAttrib('class', $attribs);
+
+                if (($submitBtn instanceof Zend_Form_Element_Button)
+                    && $submitBtn->getAttrib('type') === null)
+                {
+                    $submitBtn->setAttrib('type', 'submit');
+                }
+
+                if ($form->getElement($cancel_str) && self::BOOTSTRAP == $format) {
+                    $form->getElement($submit_str)->getDecorator('HtmlTag')
+                        ->setOption('openOnly', true);
+                }
+            }
+            if (self::TABLE == $format) {
+                if ($form->getElement($cancel_str)) {
+                    $form->getElement($submit_str)->getDecorator('data')
+                        ->setOption('openOnly', true);
+                    $form->getElement($submit_str)->getDecorator('row')
+                        ->setOption('openOnly', true);
+                }
+            }
+        }
+
+        // set cancel button decorators
+        if ($form->getElement($cancel_str)) {
+            $form->getElement($cancel_str)->setDecorators(self::$_ResetDecorator[$format]);
+            if (self::BOOTSTRAP == $format || self::BOOTSTRAP_MINIMAL == $format) {
+                $attribs = $form->getElement($cancel_str)->getAttrib('class');
+                if (empty($attribs)) {
+                    $attribs = array('btn');
+                } else {
+                    if (is_string($attribs)) {
+                        $attribs = array($attribs);
+                    }
+                    $attribs = array_unique(array_merge(array('btn'), $attribs));
+                }
+                $form->getElement($cancel_str)
+                    ->setAttrib('class', $attribs)
+                    ->setAttrib('type', 'reset');
+                if ($form->getElement($submit_str) && self::BOOTSTRAP == $format) {
+                    $form->getElement($cancel_str)->getDecorator('HtmlTag')
+                        ->setOption('closeOnly', true);
+                }
+            }
+            if (self::TABLE == $format) {
+                if ($form->getElement($submit_str)) {
+                    $form->getElement($cancel_str)->getDecorator('data')
+                        ->setOption('closeOnly', true);
+                    $form->getElement($cancel_str)->getDecorator('row')
+                        ->setOption('closeOnly', true);
+                }
             }
         }
     }
