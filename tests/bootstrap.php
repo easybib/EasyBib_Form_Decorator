@@ -11,4 +11,4 @@ require ('Zend/Loader/Autoloader.php');
 $autoloader = Zend_Loader_Autoloader::getInstance();
 $autoloader->registerNamespace('EasyBib');
 
-require ('../examples/ExampleForm.php');
+require ('TestForm.php');

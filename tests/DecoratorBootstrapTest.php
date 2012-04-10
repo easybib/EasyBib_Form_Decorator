@@ -20,7 +20,7 @@ class DecoratorBootstrapTest extends PHPUnit_Framework_TestCase
     protected function setUp()
     {
         $this->view = new Zend_View();
-        $this->form = new ExampleForm();
+        $this->form = new TestForm();
         $this->form->setView($this->view);
 
         // form config
