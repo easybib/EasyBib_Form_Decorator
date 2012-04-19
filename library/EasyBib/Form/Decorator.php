@@ -874,7 +874,7 @@ class EasyBib_Form_Decorator
      * @param  string    $format
      * @return void
      */
-    protected function setFormDefaults($form, $format)
+    protected static function setFormDefaults($form, $format)
     {
         $form->setDisableLoadDefaultDecorators(true);
         $form->setDisplayGroupDecorators(self::$_DisplayGroupDecorator[$format]);
@@ -902,7 +902,7 @@ class EasyBib_Form_Decorator
      * @param  string    $cancel_str
      * @return void
      */
-    protected function setButtonDecorators($form, $format, $submit_str, $cancel_str)
+    protected static function setButtonDecorators($form, $format, $submit_str, $cancel_str)
     {
         // set submit button decorators
         if ($form->getElement($submit_str)) {
