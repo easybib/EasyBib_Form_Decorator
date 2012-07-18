@@ -23,7 +23,7 @@
  *
  * @category EasyBib
  * @package  Form
- * @author   Michael Scholl <michael@sch0ll.de>
+ * @author   Michael Scholl <michael@sch0ll.de>, César <cesar.bmcosta@gmail.com>, Seth Miller <cr125rider@gmail.com> 
  * @license  http://www.opensource.org/licenses/mit-license.html MIT License
  * @version  git: $id$
  * @link     https://github.com/easybib/EasyBib_Form_Decorator
@@ -84,17 +84,43 @@ class EasyBib_Form extends Zend_Form
     /**
      * Build Bootstrap Error Decorators
      */
-    public function buildBootstrapErrorDecorators() {
-        foreach ($this->getErrors() AS $key=>$errors) {
-            $htmlTagDecorator = $this->getElement($key)->getDecorator('HtmlTag');
-            if (empty($htmlTagDecorator)) {
-                continue;
-            }
+    public function buildBootstrapErrorDecorators() 
+    {
+        $subForms = $this->getSubForms();
+        $styleClass = 'error';
+        foreach ($this->getErrors() as $key=>$errors) {
             if (empty($errors)) {
                 continue;
             }
-            $class = $htmlTagDecorator->getOption('class');
-            $htmlTagDecorator->setOption('class', $class . ' error');
+            if (array_key_exists($key, $subForms)) {
+                $subForm = $this->getSubForm($key);
+                
+                foreach ($errors as $subKey => $subErrors) {
+                    if (empty($subErrors)) {
+                        continue;
+                    }
+                    $this->setClassToAnElement($subForm->getElement($subKey), $styleClass);
+                }
+            } else {
+                $this->setClassToAnElement($this->getElement($key), $styleClass);
+            }   
         }
+    }
+
+    /**
+     * Set an error class into element HtmlTag decorator
+     *
+     * @param Zend_Form_Element $element
+     * @return null
+     */
+    protected function setClassToAnElement(Zend_Form_Element $element, $styleClass)
+    {
+        $htmlTagDecorator = $element->getDecorator('HtmlTag');       
+        
+        if (!empty($htmlTagDecorator)) {
+            $class = $htmlTagDecorator->getOption('class');
+            $htmlTagDecorator->setOption('class', $class . ' ' . $styleClass);
+        }
+
     }
 }
