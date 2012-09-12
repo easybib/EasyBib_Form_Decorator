@@ -23,16 +23,17 @@
  *
  * @category EasyBib
  * @package  EasyBib_Form
- * @author   Michael Scholl <michael@sch0ll.de>, César <cesar.bmcosta@gmail.com>, Seth Miller <cr125rider@gmail.com>
+ * @author   Michael Scholl <michael@sch0ll.de>
  * @license  http://www.opensource.org/licenses/mit-license.html MIT License
- * @version  git: $id$
+ * @version  GIT: <git_id>
  * @link     https://github.com/easybib/EasyBib_Form_Decorator
  */
 
 /**
  * Default Decorators Set
  *
- * This is used to style subforms. These defaults will allow decorators to be applied to subforms that are within current forms.
+ * This is used to style subforms. These defaults will allow decorators to be applied
+ * to subforms that are within current forms.
  *
  * General usage:
  * EasyBib_Form_Decorator::setFormDecorator($form, 'div', 'submit', 'cancel');
@@ -49,6 +50,8 @@
  * @category EasyBib
  * @package  EasyBib_Form
  * @author   Michael Scholl <michael@sch0ll.de>
+ * @author   César <cesar.bmcosta@gmail.co>
+ * @author   Seth Miller <cr125rider@gmail.com>
  * @license  http://www.opensource.org/licenses/mit-license.html MIT License
  * @version  Release: @package_version@
  * @link     https://github.com/easybib/EasyBib_Form_Decorator

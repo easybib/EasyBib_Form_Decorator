@@ -25,7 +25,7 @@
  * @package  EasyBib_Form
  * @author   Michael Scholl <michael@sch0ll.de>
  * @license  http://www.opensource.org/licenses/mit-license.html MIT License
- * @version  git: $id$
+ * @version  GIT: <git_id>
  * @link     https://github.com/easybib/EasyBib_Form_Decorator
  */
 
@@ -824,12 +824,19 @@ class EasyBib_Form_Decorator
     /**
      * Set the form decorators by the given string format or by the default div style
      *
-     * @param object $objForm        Zend_Form pointer-reference
-     * @param string $constFormat    Project_Plugin_FormDecoratorDefinition constants
-     * @return NULL
+     * @param Zend_Form $form       Zend_Form pointer-reference
+     * @param string    $format     Project_Plugin_FormDecoratorDefinition constants
+     * @param string    $submit_str Element name. (TBD)
+     * @param string    $cancel_str Element name. (TBD)
+     *
+     * @return void
      */
-    public static function setFormDecorator(Zend_Form $form, $format = self::BOOTSTRAP, $submit_str = 'submit', $cancel_str = 'cancel')
-    {
+    public static function setFormDecorator(
+        Zend_Form $form,
+        $format = self::BOOTSTRAP,
+        $submit_str = 'submit',
+        $cancel_str = 'cancel'
+    ) {
 
         self::setFormDefaults($form, $format);
 
@@ -870,11 +877,12 @@ class EasyBib_Form_Decorator
      * - set needed prefix path for bootstrap decorators
      * - set form element decorators
      *
-     * @param  Zend_Form $form
-     * @param  string    $format
+     * @param Zend_Form $form   The form instance.
+     * @param string    $format Standard, minimal, table.
+     *
      * @return void
      */
-    protected static function setFormDefaults($form, $format)
+    protected static function setFormDefaults(Zend_Form $form, $format)
     {
         $form->setDisableLoadDefaultDecorators(true);
         $form->setDisplayGroupDecorators(self::$_DisplayGroupDecorator[$format]);
@@ -896,17 +904,26 @@ class EasyBib_Form_Decorator
     /**
      * Set Button Decorators
      *
-     * @param  Zend_Form $form
-     * @param  string    $format
-     * @param  string    $submit_str
-     * @param  string    $cancel_str
+     * @param Zend_Form $form       Instance of the form.
+     * @param string    $format     The format (standard, minimal, table).
+     * @param string    $submit_str Element name of the submit button.
+     * @param string    $cancel_str Element name of the cancel button.
+     *
      * @return void
      */
-    protected static function setButtonDecorators($form, $format, $submit_str, $cancel_str)
-    {
+    protected static function setButtonDecorators(
+        Zend_Form $form,
+        $format,
+        $submit_str,
+        $cancel_str
+    ) {
         // set submit button decorators
         if ($form->getElement($submit_str)) {
-            $form->getElement($submit_str)->setDecorators(self::$_SubmitDecorator[$format]);
+
+            $form->getElement($submit_str)->setDecorators(
+                self::$_SubmitDecorator[$format]
+            );
+
             if (self::BOOTSTRAP == $format || self::BOOTSTRAP_MINIMAL == $format) {
                 $attribs = $form->getElement($submit_str)->getAttrib('class');
                 if (empty($attribs)) {
@@ -920,9 +937,10 @@ class EasyBib_Form_Decorator
                 $submitBtn = $form->getElement($submit_str);
                 $submitBtn->setAttrib('class', $attribs);
 
-                if (($submitBtn instanceof Zend_Form_Element_Button)
-                    && $submitBtn->getAttrib('type') === null)
-                {
+                if (
+                    true === ($submitBtn instanceof Zend_Form_Element_Button)
+                    && $submitBtn->getAttrib('type') === null
+                ) {
                     $submitBtn->setAttrib('type', 'submit');
                 }
 
@@ -943,7 +961,11 @@ class EasyBib_Form_Decorator
 
         // set cancel button decorators
         if ($form->getElement($cancel_str)) {
-            $form->getElement($cancel_str)->setDecorators(self::$_ResetDecorator[$format]);
+
+            $form->getElement($cancel_str)->setDecorators(
+                self::$_ResetDecorator[$format]
+            );
+
             if (self::BOOTSTRAP == $format || self::BOOTSTRAP_MINIMAL == $format) {
                 $attribs = $form->getElement($cancel_str)->getAttrib('class');
                 if (empty($attribs)) {

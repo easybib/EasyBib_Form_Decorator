@@ -25,7 +25,7 @@
  * @package  ViewHelper
  * @author   Michael Scholl <michael@sch0ll.de>
  * @license  http://www.opensource.org/licenses/mit-license.html MIT License
- * @version  git: $id$
+ * @version  GIT: <git_id>
  * @link     https://github.com/easybib/EasyBib_Form_Decorator
  */
 
@@ -52,9 +52,10 @@ class EasyBib_View_Helper_MessagesFormatter extends Zend_View_Helper_Abstract
      *      - use (alert-message) warning|error|success|info for bootstrap
      * -> second child is printed message
      *
-     * @param  array  $messages
-     * @param  string $tag (default=div)
-     * @param  string $format (default=bootstrap)
+     * @param mixed  $messages A string or an array.
+     * @param string $tag      (default=div)
+     * @param string $format   (default=bootstrap)
+     *
      * @return string
      */
     public function messagesFormatter($messages, $tag = 'div', $format = 'bootstrap')
