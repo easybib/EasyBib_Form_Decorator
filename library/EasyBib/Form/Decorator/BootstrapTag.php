@@ -26,7 +26,7 @@
  * @subpackage Decorator
  * @author     Michael Scholl <michael@sch0ll.de>
  * @license    http://www.opensource.org/licenses/mit-license.html MIT License
- * @version    git: $id$
+ * @version    GIT: <git_id>
  * @link       https://github.com/easybib/EasyBib_Form_Decorator
  */
 
@@ -59,7 +59,8 @@ class EasyBib_Form_Decorator_BootstrapTag extends Zend_Form_Decorator_HtmlTag
     /**
      * Render content wrapped in an HTML tag
      *
-     * @param  string $content
+     * @param string $content
+     *
      * @return string
      */
     public function render($content)
@@ -69,6 +70,7 @@ class EasyBib_Form_Decorator_BootstrapTag extends Zend_Form_Decorator_HtmlTag
         $noAttribs = $this->getOption('noAttribs');
         $openOnly  = $this->getOption('openOnly');
         $closeOnly = $this->getOption('closeOnly');
+
         $this->removeOption('noAttribs');
         $this->removeOption('openOnly');
         $this->removeOption('closeOnly');
@@ -79,31 +81,30 @@ class EasyBib_Form_Decorator_BootstrapTag extends Zend_Form_Decorator_HtmlTag
         }
 
         switch ($placement) {
-            case self::APPEND:
-                if ($closeOnly) {
-                    return $content . $this->_getCloseTag($tag);
-                }
-                if ($openOnly) {
-                    return $content . $this->_getOpenTag($tag, $attribs);
-                }
-                return $content
-                     . $this->_getOpenTag($tag, $attribs)
-                     . $this->_getCloseTag($tag);
-            case self::PREPEND:
-                if ($closeOnly) {
-                    return $this->_getCloseTag($tag) . $content;
-                }
-                if ($openOnly) {
-                    return $this->_getOpenTag($tag, $attribs) . $content;
-                }
-                return $this->_getOpenTag($tag, $attribs)
-                     . $this->_getCloseTag($tag)
-                     . $content;
-            default:
-                return (($openOnly || !$closeOnly) ? $this->_getOpenTag($tag, $attribs) : '')
-                     . $content
-                     . (($closeOnly || !$openOnly) ? $this->_getCloseTag($tag) : '');
+        case self::APPEND:
+            if ($closeOnly) {
+                return $content . $this->_getCloseTag($tag);
+            }
+            if ($openOnly) {
+                return $content . $this->_getOpenTag($tag, $attribs);
+            }
+            return $content
+                . $this->_getOpenTag($tag, $attribs)
+                . $this->_getCloseTag($tag);
+        case self::PREPEND:
+            if ($closeOnly) {
+                return $this->_getCloseTag($tag) . $content;
+            }
+            if ($openOnly) {
+                return $this->_getOpenTag($tag, $attribs) . $content;
+            }
+            return $this->_getOpenTag($tag, $attribs)
+                 . $this->_getCloseTag($tag)
+                 . $content;
+        default:
+            return (($openOnly || !$closeOnly) ? $this->_getOpenTag($tag, $attribs) : '')
+                . $content
+                . (($closeOnly || !$openOnly) ? $this->_getCloseTag($tag) : '');
         }
     }
-
 }
