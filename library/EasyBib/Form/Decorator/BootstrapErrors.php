@@ -26,7 +26,7 @@
  * @subpackage Decorator
  * @author     Michael Scholl <michael@sch0ll.de>
  * @license    http://www.opensource.org/licenses/mit-license.html MIT License
- * @version    git: $id$
+ * @version    GIT: <git_id>
  * @link       https://github.com/easybib/EasyBib_Form_Decorator
  */
 
@@ -48,7 +48,8 @@ class EasyBib_Form_Decorator_BootstrapErrors extends Zend_Form_Decorator_HtmlTag
     /**
      * Render content wrapped in an HTML tag
      *
-     * @param  string $content
+     * @param string $content
+     *
      * @return string
      */
     public function render($content)
@@ -66,19 +67,22 @@ class EasyBib_Form_Decorator_BootstrapErrors extends Zend_Form_Decorator_HtmlTag
 
         $separator = $this->getSeparator();
         $placement = $this->getPlacement();
+
         $formErrorHelper = $view->getHelper('formErrors');
         $formErrorHelper->setElementStart('<span%s>')
             ->setElementSeparator(' | ')
             ->setElementEnd('</span>');
-        $errors = $formErrorHelper->formErrors($errors, array('class' => 'help-inline'));
+
+        $errors = $formErrorHelper->formErrors(
+            $errors, array('class' => 'help-inline')
+        );
 
         switch ($placement) {
-            case 'PREPEND':
-                return $errors . $separator . $content;
-            case 'APPEND':
-            default:
-                return $content . $separator . $errors;
+        case 'PREPEND':
+            return $errors . $separator . $content;
+        case 'APPEND':
+        default:
+            return $content . $separator . $errors;
         }
     }
-
 }
