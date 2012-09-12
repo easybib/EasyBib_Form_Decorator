@@ -1,0 +1,33 @@
+{
+    "name":"easybib/form-decorator",
+    "description": "EasyBib_Form_Decorator is a set of Twitter Bootstrap decorators for Zend_Form",
+    "type":"library",
+    "license":"MIT",
+    "authors":[
+        {
+            "name": "Michael Scholl",
+            "email": "michael@sch0ll.de"
+        },
+        {
+            "name":"Till Klampaeckel",
+            "email":"till@php.net"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "git",
+            "url": "http://github.com/easybib/zf1"
+        }
+    ],
+    "autoload": {
+        "psr-0": {
+            "EasyBib_Form": "library"
+        }
+    },
+    "suggest": {
+        "easybib-core/zf1": "Our Zend Framework 1 fork (sans require_once and a couple components we don't need/use)"
+    },
+    "require":{
+        "php": ">=5.3.0"
+    }
+}
