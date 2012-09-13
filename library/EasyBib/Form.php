@@ -106,7 +106,8 @@ class EasyBib_Form extends Zend_Form
         $subForms   = $this->getSubForms();
         $styleClass = 'error';
 
-        foreach ($this->getErrors() as $key=>$errors) {
+        $errors = array_merge($this->getErrors(), $this->getMessages());
+        foreach ($errors AS $key=>$errors) {
             if (empty($errors)) {
                 continue;
             }
