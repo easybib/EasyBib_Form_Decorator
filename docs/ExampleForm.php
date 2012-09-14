@@ -104,7 +104,7 @@ class ExampleForm extends EasyBib_Form
 
         $captcha->setLabel('Captcha:')
             ->setRequired(true)
-            ->setDescription("Das ist ein Test");
+            ->setDescription("This is a test");
 
         $submit->setLabel('Save');
         $cancel->setLabel('Cancel');
