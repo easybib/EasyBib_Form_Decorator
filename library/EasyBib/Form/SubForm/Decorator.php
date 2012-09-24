@@ -56,7 +56,7 @@
  * @version  Release: @package_version@
  * @link     https://github.com/easybib/EasyBib_Form_Decorator
  */
-class EasyBib_Form_SubDecorator extends EasyBib_Form_Decorator
+class EasyBib_Form_SubForm_Decorator extends EasyBib_Form_Decorator
 {
     /**
      * Form Element Decorator
