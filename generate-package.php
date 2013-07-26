@@ -10,10 +10,10 @@ function handleError($error) {
     var_dump($error); exit;
 }
 
-$api_version     = '0.4.0';
+$api_version     = '0.4.1';
 $api_state       = 'beta';
 
-$release_version = '0.4.0';
+$release_version = '0.4.1';
 $release_state   = 'beta';
 $release_notes   = "Small bugfixes:\n";
 $release_notes  .= "https://github.com/easybib/EasyBib_Form_Decorator/pulls?direction=desc&page=1&sort=created&state=closed\n";
