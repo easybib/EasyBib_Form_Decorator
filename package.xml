@@ -28,10 +28,10 @@ The default is &apos;Twitter Bootstrap&apos;.
   <active>yes</active>
  </lead>
  <date>2013-07-26</date>
- <time>17:54:33</time>
+ <time>17:56:06</time>
  <version>
-  <release>0.4.0</release>
-  <api>0.4.0</api>
+  <release>0.4.1</release>
+  <api>0.4.1</api>
  </version>
  <stability>
   <release>beta</release>
@@ -331,6 +331,22 @@ Add BOOTSTRAP_MINIMAL style for cleaner markup usage of Bootstrap 2
    <version>
     <release>0.4.0</release>
     <api>0.4.0</api>
+   </version>
+   <stability>
+    <release>beta</release>
+    <api>beta</api>
+   </stability>
+   <date>2013-07-26</date>
+   <license uri="http://www.opensource.org/licenses/mit-license.php">MIT</license>
+   <notes>
+Small bugfixes:
+https://github.com/easybib/EasyBib_Form_Decorator/pulls?direction=desc&amp;page=1&amp;sort=created&amp;state=closed
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>0.4.1</release>
+    <api>0.4.1</api>
    </version>
    <stability>
     <release>beta</release>
