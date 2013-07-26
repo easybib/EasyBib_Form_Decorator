@@ -28,7 +28,7 @@ The default is &apos;Twitter Bootstrap&apos;.
   <active>yes</active>
  </lead>
  <date>2013-07-26</date>
- <time>17:50:50</time>
+ <time>17:54:33</time>
  <version>
   <release>0.4.0</release>
   <api>0.4.0</api>
@@ -96,15 +96,6 @@ https://github.com/easybib/EasyBib_Form_Decorator/pulls?direction=desc&amp;page=
     <file baseinstalldir="/" name="phpunit.xml" role="test" />
     <file baseinstalldir="/" name="TestForm.php" role="test" />
    </dir> <!-- /tests -->
-   <dir name="vendor">
-    <dir name="composer">
-     <file baseinstalldir="/" name="autoload_classmap.php" role="php" />
-     <file baseinstalldir="/" name="autoload_namespaces.php" role="php" />
-     <file baseinstalldir="/" name="autoload_real.php" role="php" />
-     <file baseinstalldir="/" name="ClassLoader.php" role="php" />
-    </dir> <!-- /vendor/composer -->
-    <file baseinstalldir="/" name="autoload.php" role="php" />
-   </dir> <!-- /vendor -->
    <file baseinstalldir="/" name="composer.json" role="data" />
    <file baseinstalldir="/" name="composer.phar" role="data" />
    <file baseinstalldir="/" name="README.md" role="doc" />
