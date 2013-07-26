@@ -88,7 +88,7 @@ function readDirectory($path) {
         } else {
             readDirectory($file);
         }
-    }   
+    }
 }
 
 $files = array();
