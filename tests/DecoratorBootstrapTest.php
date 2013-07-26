@@ -65,6 +65,8 @@ class DecoratorBootstrapTest extends PHPUnit_Framework_TestCase
 
     public function testCaptchaElement()
     {
+        $this->markTestSkipped("Removed captcha test");
+
         $decorators = $this->form->getElement('captcha')->getDecorators();
         $this->bootstrapAssertions($decorators, false);
         $validator = $this->form->getElement('captcha')->getValidator('Zend_Captcha_Figlet');

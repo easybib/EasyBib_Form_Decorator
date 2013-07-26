@@ -12,7 +12,7 @@ class TestForm extends EasyBib_Form
         $radio       = new Zend_Form_Element_Radio('radio');
         $file        = new Zend_Form_Element_File('file');
         $multi       = new Zend_Form_Element_MultiCheckbox('multi');
-        $captcha     = new Zend_Form_Element_Captcha('captcha', array('captcha' => 'Figlet'));
+        //$captcha     = new Zend_Form_Element_Captcha('captcha', array('captcha' => 'Figlet'));
         $submit      = new Zend_Form_Element_Button('submit');
         $cancel      = new Zend_Form_Element_Button('cancel');
 
@@ -44,17 +44,18 @@ class TestForm extends EasyBib_Form
             ->setMultiOptions($multiOptions)
             ->setRequired(true);
 
+/*
         $captcha->setLabel('Captcha:')
             ->setRequired(true)
             ->setDescription("This is a test");
-
+*/
         $submit->setLabel('Save')
             ->setAttrib('type', 'submit');
         $cancel->setLabel('Cancel');
 
         // add elements
         $this->addElements(array(
-            $userId, $mail, $name, $radio, $file, $captcha, $multi, $submit, $cancel
+            $userId, $mail, $name, $radio, $file, $multi, $submit, $cancel
         ));
 
         // add display group
