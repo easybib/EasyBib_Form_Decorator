@@ -5,12 +5,13 @@ ini_set('date.timezone', 'Europe/Berlin');
 require_once 'PEAR/PackageFileManager2.php';
 PEAR::setErrorHandling(PEAR_ERROR_DIE);
 
-$api_version     = '0.3.2';
-$api_state       = 'alpha';
+$api_version     = '0.4.0';
+$api_state       = 'beta';
 
-$release_version = '0.3.2';
-$release_state   = 'alpha';
-$release_notes   = "Add BOOTSTRAP_MINIMAL style for cleaner markup usage of Bootstrap 2\n";
+$release_version = '0.4.0';
+$release_state   = 'beta';
+$release_notes   = "Small bugfixes:\n";
+$release_notes  .= "https://github.com/easybib/EasyBib_Form_Decorator/pulls?direction=desc&page=1&sort=created&state=closed\n";
 
 $description = "EasyBib_Form Decorator supports four modes: \n"
     . " * Table \n"
