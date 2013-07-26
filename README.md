@@ -1,3 +1,7 @@
+# Bootstrap form decorators for Zend Framework 1
+
+[![Build Status](https://travis-ci.org/easybib/EasyBib_Form_Decorator.png?branch=master)](https://travis-ci.org/easybib/EasyBib_Form_Decorator)
+
 ## Installation & Configuration
 
  1. `sudo pear channel-discover easybib.github.com/pear`
