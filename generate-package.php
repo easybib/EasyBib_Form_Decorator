@@ -1,9 +1,14 @@
-#!/usr/bin/env php
+#!/usr/bin/php
 <?php
+error_reporting(E_ALL & ~E_DEPRECATED & ~E_STRICT);
 ini_set('date.timezone', 'Europe/Berlin');
 
 require_once 'PEAR/PackageFileManager2.php';
-PEAR::setErrorHandling(PEAR_ERROR_DIE);
+PEAR::setErrorHandling(PEAR_ERROR_CALLBACK, 'handleError');
+
+function handleError($error) {
+    var_dump($error); exit;
+}
 
 $api_version     = '0.4.0';
 $api_state       = 'beta';
@@ -20,6 +25,7 @@ $description = "EasyBib_Form Decorator supports four modes: \n"
     . " * Twitter Bootstrap Minimal \n\n"
     . "The default is 'Twitter Bootstrap'.\n";
 
+/** @var PEAR_PackageFile_v2_rw $package */
 $package = new PEAR_PackageFileManager2();
 
 $package->setOptions(
