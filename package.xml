@@ -27,19 +27,20 @@ The default is &apos;Twitter Bootstrap&apos;.
   <email>till@lagged.biz</email>
   <active>yes</active>
  </lead>
- <date>2012-04-10</date>
- <time>15:56:38</time>
+ <date>2013-07-26</date>
+ <time>17:50:50</time>
  <version>
-  <release>0.3.2</release>
-  <api>0.3.2</api>
+  <release>0.4.0</release>
+  <api>0.4.0</api>
  </version>
  <stability>
-  <release>alpha</release>
-  <api>alpha</api>
+  <release>beta</release>
+  <api>beta</api>
  </stability>
  <license uri="http://www.opensource.org/licenses/mit-license.php">MIT</license>
  <notes>
-Add BOOTSTRAP_MINIMAL style for cleaner markup usage of Bootstrap 2
+Small bugfixes:
+https://github.com/easybib/EasyBib_Form_Decorator/pulls?direction=desc&amp;page=1&amp;sort=created&amp;state=closed
  </notes>
  <contents>
   <dir baseinstalldir="/" name="/">
@@ -67,6 +68,11 @@ Add BOOTSTRAP_MINIMAL style for cleaner markup usage of Bootstrap 2
         <tasks:replace from="@package_version@" to="version" type="package-info" />
        </file>
       </dir> <!-- /library/EasyBib/Form/Decorator -->
+      <dir name="SubForm">
+       <file baseinstalldir="/" name="Decorator.php" role="php">
+        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       </file>
+      </dir> <!-- /library/EasyBib/Form/SubForm -->
       <file baseinstalldir="/" name="Decorator.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
       </file>
@@ -90,6 +96,17 @@ Add BOOTSTRAP_MINIMAL style for cleaner markup usage of Bootstrap 2
     <file baseinstalldir="/" name="phpunit.xml" role="test" />
     <file baseinstalldir="/" name="TestForm.php" role="test" />
    </dir> <!-- /tests -->
+   <dir name="vendor">
+    <dir name="composer">
+     <file baseinstalldir="/" name="autoload_classmap.php" role="php" />
+     <file baseinstalldir="/" name="autoload_namespaces.php" role="php" />
+     <file baseinstalldir="/" name="autoload_real.php" role="php" />
+     <file baseinstalldir="/" name="ClassLoader.php" role="php" />
+    </dir> <!-- /vendor/composer -->
+    <file baseinstalldir="/" name="autoload.php" role="php" />
+   </dir> <!-- /vendor -->
+   <file baseinstalldir="/" name="composer.json" role="data" />
+   <file baseinstalldir="/" name="composer.phar" role="data" />
    <file baseinstalldir="/" name="README.md" role="doc" />
   </dir> <!-- / -->
  </contents>
@@ -118,6 +135,7 @@ Add BOOTSTRAP_MINIMAL style for cleaner markup usage of Bootstrap 2
    <install as="EasyBib/Form/Decorator/BootstrapErrors.php" name="library/EasyBib/Form/Decorator/BootstrapErrors.php" />
    <install as="EasyBib/Form/Decorator/BootstrapTag.php" name="library/EasyBib/Form/Decorator/BootstrapTag.php" />
    <install as="EasyBib/Form/Decorator.php" name="library/EasyBib/Form/Decorator.php" />
+   <install as="EasyBib/Form/SubForm/Decorator.php" name="library/EasyBib/Form/SubForm/Decorator.php" />
    <install as="EasyBib/Form.php" name="library/EasyBib/Form.php" />
    <install as="EasyBib/View/Helper/MessagesFormatter.php" name="library/EasyBib/View/Helper/MessagesFormatter.php" />
   </filelist>
@@ -316,6 +334,22 @@ Changes for MessageFormatter helper to work nice with Bootstrap 2
    <license uri="http://www.opensource.org/licenses/mit-license.php">MIT</license>
    <notes>
 Add BOOTSTRAP_MINIMAL style for cleaner markup usage of Bootstrap 2
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>0.4.0</release>
+    <api>0.4.0</api>
+   </version>
+   <stability>
+    <release>beta</release>
+    <api>beta</api>
+   </stability>
+   <date>2013-07-26</date>
+   <license uri="http://www.opensource.org/licenses/mit-license.php">MIT</license>
+   <notes>
+Small bugfixes:
+https://github.com/easybib/EasyBib_Form_Decorator/pulls?direction=desc&amp;page=1&amp;sort=created&amp;state=closed
    </notes>
   </release>
  </changelog>
