@@ -4,6 +4,25 @@
 
 ## Installation & Configuration
 
+### Composer
+
+Add this to repositories:
+
+```json
+{
+    "type": "vcs",
+    "url": "https://github.com/easybib/EasyBib_Form_Decorator"
+}
+```
+
+Then this in require:
+
+```json
+"easybib/form-decorator": "*"
+```
+
+### PEAR
+
  1. `sudo pear channel-discover easybib.github.com/pear`
  2. `sudo pear install easybib/EasyBib_Form_Decorator-alpha`
  3. add `autoloaderNamespaces[] = "EasyBib"` to your `application.ini`
@@ -11,7 +30,7 @@
  	in your Bootstrap
  5. follow examples in docs folder to integrate it into your forms
 
-### Updating?
+### Updating? (PEAR)
 
 (We like you best!)
 
