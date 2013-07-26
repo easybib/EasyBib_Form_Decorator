@@ -46,6 +46,7 @@ $package->setOptions(
             '.git*',
             'generate-package.php',
             '*.tgz',
+            'composer.*',
             'vendor/',
         )
     )
