@@ -137,27 +137,26 @@ class EasyBib_Form_Decorator
                 'Description',
                 array(
                     'tag'   => 'p',
-                    'class' => 'help-block',
-                    'style' => 'color: #999;'
+                    'class' => 'help-block'
                 )
             ),
             array(
                 'BootstrapTag',
                 array(
-                    'class' => 'controls'
+                    'class' => 'col-sm-10'
                 )
             ),
             array(
                 'Label',
                 array(
-                    'class' => 'control-label'
+                    'class' => 'control-label col-sm-2'
                 )
             ),
             array(
                 'HtmlTag',
                 array(
                     'tag'   => 'div',
-                    'class' => 'control-group'
+                    'class' => 'form-group'
                 )
             )
         ),
@@ -172,8 +171,7 @@ class EasyBib_Form_Decorator
                 'Description',
                 array(
                     'tag'   => 'p',
-                    'class' => 'help-block',
-                    'style' => 'color: #999;'
+                    'class' => 'help-block'
                 )
             ),
             array(
@@ -242,8 +240,7 @@ class EasyBib_Form_Decorator
                 'Description',
                 array(
                     'tag'   => 'p',
-                    'class' => 'help-block',
-                    'style' => 'color: #999;'
+                    'class' => 'help-block'
                 )
             ),
             array(
@@ -274,8 +271,7 @@ class EasyBib_Form_Decorator
                 'Description',
                 array(
                     'tag'   => 'p',
-                    'class' => 'help-block',
-                    'style' => 'color: #999;'
+                    'class' => 'help-block'
                 )
             ),
             array(
@@ -360,8 +356,7 @@ class EasyBib_Form_Decorator
                 'Description',
                 array(
                     'tag'   => 'p',
-                    'class' => 'help-block',
-                    'style' => 'color: #999;'
+                    'class' => 'help-block'
                 )
             ),
             array(
@@ -398,8 +393,7 @@ class EasyBib_Form_Decorator
                 'Description',
                 array(
                     'tag'   => 'p',
-                    'class' => 'help-block',
-                    'style' => 'color: #999;'
+                    'class' => 'help-block'
                 )
             ),
             array(
@@ -757,8 +751,7 @@ class EasyBib_Form_Decorator
                 'Description',
                 array(
                     'tag'   => 'span',
-                    'class' => 'help-block',
-                    'style' => 'color: #999;'
+                    'class' => 'help-block'
                 )
             ),
             array(
@@ -792,8 +785,7 @@ class EasyBib_Form_Decorator
                 'Description',
                 array(
                     'tag'   => 'span',
-                    'class' => 'help-block',
-                    'style' => 'color: #999;'
+                    'class' => 'help-block'
                 )
             ),
             array(
@@ -866,6 +858,11 @@ class EasyBib_Form_Decorator
             }
             if ($e->getType() == 'Zend_Form_Element_File') {
                 $e->setDecorators(self::$_FileDecorator[$format]);
+            }
+
+            if ($e instanceof Zend_Form_Element_Text || $e instanceof Zend_Form_Element_Password || $e instanceof Zend_Form_Element_Select
+                || $e instanceof Zend_Form_Element_Textarea) {
+                $e->setAttrib('class','form-control');
             }
         }
     }

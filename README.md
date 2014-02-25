@@ -1,4 +1,4 @@
-# Bootstrap form decorators for Zend Framework 1
+# Bootstrap3 form decorators for Zend Framework 1
 
 [![Build Status](https://travis-ci.org/easybib/EasyBib_Form_Decorator.png?branch=master)](https://travis-ci.org/easybib/EasyBib_Form_Decorator)
 
