@@ -24,6 +24,9 @@
             "EasyBib_Form": "library"
         }
     },
+    "include-path": [
+        "library/"
+    ],
     "suggest": {
         "easybib-core/zf1": "Our Zend Framework 1 fork (sans require_once and a couple components we don't need/use)"
     },
