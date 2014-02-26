@@ -848,13 +848,11 @@ class EasyBib_Form_Decorator
             if ($e->getType() == 'Zend_Form_Element_MultiCheckbox') {
                 $e->setDecorators(self::$_MultiDecorator[$format]);
                 $e->setSeparator('');
-                $e->setAttrib('label_class', 'checkbox');
                 //$e->setAttrib("escape", false);
             }
             if ($e->getType() == 'Zend_Form_Element_Radio') {
                 $e->setDecorators(self::$_MultiDecorator[$format]);
                 $e->setSeparator('');
-                $e->setAttrib('label_class', 'radio');
             }
             if ($e->getType() == 'Zend_Form_Element_File') {
                 $e->setDecorators(self::$_FileDecorator[$format]);
