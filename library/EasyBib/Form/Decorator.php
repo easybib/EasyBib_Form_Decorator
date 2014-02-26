@@ -181,6 +181,129 @@ class EasyBib_Form_Decorator
     );
 
     /**
+     * Checkbox Decorator
+     *
+     * @staticvar array
+     */
+    protected static $_CheckboxDecorator = array(
+        'table' => array(
+            'ViewHelper',
+            array(
+                'Description',
+                array(
+                    'tag'   => ''
+                )
+            ),
+            'Errors',
+            array(
+                array(
+                    'data' => 'HtmlTag'
+                ),
+                array(
+                    'tag' => 'td'
+                )
+            ),
+            array(
+                'Label',
+                array(
+                    'tag' => 'td'
+                )
+            ),
+            array(
+                array(
+                    'row' => 'HtmlTag'
+                ),
+                array(
+                    'tag' => 'tr'
+                )
+            )
+        ),
+        'div' => array(
+            array(
+                'ViewHelper'
+            ),
+            array(
+                'Description',
+                array(
+                    'tag'   => 'span',
+                    'class' => 'hint'
+                )
+            ),
+            array(
+                'Errors'
+            ),
+            array(
+                'Label'
+            ),
+            array(
+                'HtmlTag',
+                array(
+                    'tag' => 'div'
+                )
+            )
+        ),
+        'bootstrap' => array(
+            array(
+                'ViewHelper'
+            ),
+            array(
+                array('CheckboxWrap' => 'HtmlTag'),
+                array(
+                    'tag'   => 'span',
+                    'class' => 'checkbox'
+                )
+            ),
+            array(
+                'BootstrapErrors'
+            ),
+            array(
+                'Description',
+                array(
+                    'tag'   => 'p',
+                    'class' => 'help-block'
+                )
+            ),
+            array(
+                'BootstrapTag',
+                array(
+                    'class' => 'col-sm-10'
+                )
+            ),
+            array(
+                'Label',
+                array(
+                    'class' => 'control-label col-sm-2'
+                )
+            ),
+            array(
+                'HtmlTag',
+                array(
+                    'tag'   => 'div',
+                    'class' => 'form-group'
+                )
+            )
+        ),
+        'bootstrap_minimal' => array(
+            array(
+                'ViewHelper'
+            ),
+            array(
+                'BootstrapErrors'
+            ),
+            array(
+                'Description',
+                array(
+                    'tag'   => 'p',
+                    'class' => 'help-block'
+                )
+            ),
+            array(
+                'Label'
+            )
+        )
+    );
+
+    /**
      * Captcha Decorator
      *
      * @staticvar array
@@ -844,6 +967,9 @@ class EasyBib_Form_Decorator
             }
             if ($e->getType() == 'Zend_Form_Element_Captcha') {
                 $e->setDecorators(self::$_CaptchaDecorator[$format]);
+            }
+            if ($e->getType() == 'Zend_Form_Element_Checkbox') {
+                $e->setDecorators(self::$_CheckboxDecorator[$format]);
             }
             if ($e->getType() == 'Zend_Form_Element_MultiCheckbox') {
                 $e->setDecorators(self::$_MultiDecorator[$format]);
