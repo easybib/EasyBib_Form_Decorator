@@ -958,29 +958,30 @@ class EasyBib_Form_Decorator
         self::setButtonDecorators($form, $format, $submit_str, $cancel_str);
 
         // set hidden, captcha, multi input decorators, file
+        /** @var $e Zend_Form_Element | Zend_Form_Element_Multi */
         foreach ($form->getElements() as $e) {
-            if ($e->getType() == 'Zend_Form_Element_Hidden') {
+            if ($e instanceof Zend_Form_Element_Hidden) {
                 $e->setDecorators(self::$_HiddenDecorator[$format]);
             }
             if (is_subclass_of($e, "ZendX_JQuery_Form_Element_UiWidget")) {
                 $e->setDecorators(self::$_JqueryElementDecorator[$format]);
             }
-            if ($e->getType() == 'Zend_Form_Element_Captcha') {
+            if ($e instanceof Zend_Form_Element_Captcha) {
                 $e->setDecorators(self::$_CaptchaDecorator[$format]);
             }
-            if ($e->getType() == 'Zend_Form_Element_Checkbox') {
+            if ($e instanceof Zend_Form_Element_Checkbox) {
                 $e->setDecorators(self::$_CheckboxDecorator[$format]);
             }
-            if ($e->getType() == 'Zend_Form_Element_MultiCheckbox') {
+            if ($e instanceof Zend_Form_Element_MultiCheckbox) {
                 $e->setDecorators(self::$_MultiDecorator[$format]);
                 $e->setSeparator('');
                 //$e->setAttrib("escape", false);
             }
-            if ($e->getType() == 'Zend_Form_Element_Radio') {
+            if ($e instanceof Zend_Form_Element_Radio) {
                 $e->setDecorators(self::$_MultiDecorator[$format]);
                 $e->setSeparator('');
             }
-            if ($e->getType() == 'Zend_Form_Element_File') {
+            if ($e instanceof Zend_Form_Element_File) {
                 $e->setDecorators(self::$_FileDecorator[$format]);
             }
 
