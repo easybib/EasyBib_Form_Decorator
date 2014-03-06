@@ -404,7 +404,7 @@ class EasyBib_Form_Decorator
     );
 
     /**
-     * Captcha Decorator
+     * File Decorator
      *
      * @staticvar array
      */
@@ -485,20 +485,20 @@ class EasyBib_Form_Decorator
             array(
                 'BootstrapTag',
                 array(
-                    'class' => 'controls'
+                    'class' => 'col-sm-10'
                 )
             ),
             array(
                 'Label',
                 array(
-                    'class' => 'control-label'
+                    'class' => 'control-label col-sm-2'
                 )
             ),
             array(
                 'HtmlTag',
                 array(
                     'tag'   => 'div',
-                    'class' => 'control-group'
+                    'class' => 'form-group'
                 )
             )
         ),
