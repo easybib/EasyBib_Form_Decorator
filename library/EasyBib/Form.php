@@ -139,7 +139,9 @@ class EasyBib_Form extends Zend_Form
      */
     protected function setClassToAnElement(Zend_Form_Element $element, $styleClass)
     {
-        $htmlTagDecorator = $element->getDecorator('HtmlTag');
+        $htmlTagDecorator = method_exists($element, 'getDecorator')
+            ? $element->getDecorator('HtmlTag')
+            : null;
 
         if (!empty($htmlTagDecorator)) {
             $class = $htmlTagDecorator->getOption('class');
