@@ -33,7 +33,7 @@
 /**
  * Ez_Form_Decorator_BootstrapErrors
  *
- * Wraps errors in span with class help-inline
+ * Wraps errors in span with class help-block
  *
  * @category   EasyBib
  * @package    EasyBib_Form
@@ -74,7 +74,7 @@ class EasyBib_Form_Decorator_BootstrapErrors extends Zend_Form_Decorator_HtmlTag
             ->setElementEnd('</span>');
 
         $errors = $formErrorHelper->formErrors(
-            $errors, array('class' => 'help-inline')
+            $errors, array('class' => 'help-block')
         );
 
         switch ($placement) {
