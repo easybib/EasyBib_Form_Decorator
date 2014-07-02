@@ -13,12 +13,6 @@
             "email":"till@php.net"
         }
     ],
-    "repositories": [
-        {
-            "type": "git",
-            "url": "http://github.com/easybib/zf1"
-        }
-    ],
     "autoload": {
         "psr-0": {
             "EasyBib_Form": "library"
@@ -31,9 +25,7 @@
         "easybib-core/zf1": "Our Zend Framework 1 fork (sans require_once and a couple components we don't need/use)"
     },
     "require":{
-        "php": ">=5.3.0"
-    },
-    "require-dev": {
-        "easybib-core/zf1": "*"
+        "php": ">=5.3.0",
+        "zendframework/zendframework1": "*"
     }
 }
