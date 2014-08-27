@@ -673,11 +673,18 @@ class EasyBib_Form_Decorator
         'bootstrap' => array(
             'ViewHelper',
             array(
-                'HtmlTag',
                 array(
-                    'tag'   => 'div',
-                    'class' => 'form-actions',
-                    'openOnly' => false
+                    'wrapperField' => 'HtmlTag'
+                ),
+                array(
+                    'tag' => 'div', 'class' => 'form-group'
+                )
+            ),
+            array(
+                array('wrapperAll' => 'HtmlTag'),
+                array(
+                    'tag' => 'div',
+                    'class' => 'col-sm-offset-2 col-sm-10'
                 )
             )
         ),
