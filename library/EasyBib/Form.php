@@ -125,7 +125,9 @@ class EasyBib_Form extends Zend_Form
                 }
                 continue;
             }
-            $this->setClassToAnElement($this->getElement($key), $styleClass);
+            if($element = $this->getElement($key)) {
+                $this->setClassToAnElement($element, $styleClass);
+            }
         }
     }
 
