@@ -673,6 +673,13 @@ class EasyBib_Form_Decorator
         'bootstrap' => array(
             'ViewHelper',
             array(
+                array('wrapperAll' => 'HtmlTag'),
+                array(
+                    'tag' => 'div',
+                    'class' => 'col-sm-offset-2 col-sm-10'
+                )
+            ),
+            array(
                 array(
                     'wrapperField' => 'HtmlTag'
                 ),
@@ -680,13 +687,6 @@ class EasyBib_Form_Decorator
                     'tag' => 'div', 'class' => 'form-group'
                 )
             ),
-            array(
-                array('wrapperAll' => 'HtmlTag'),
-                array(
-                    'tag' => 'div',
-                    'class' => 'col-sm-offset-2 col-sm-10'
-                )
-            )
         ),
         'bootstrap_minimal' => array(
             'ViewHelper'
