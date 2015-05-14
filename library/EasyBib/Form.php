@@ -104,7 +104,7 @@ class EasyBib_Form extends Zend_Form
     public function buildBootstrapErrorDecorators()
     {
         $subForms   = $this->getSubForms();
-        $styleClass = 'error';
+        $styleClass = 'has-error';
 
         $messages = array_merge($this->getErrors(), $this->getMessages());
         foreach ($messages as $key => $errors) {
