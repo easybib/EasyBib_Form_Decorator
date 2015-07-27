@@ -10,4 +10,8 @@ sudo: false
 before_script:
   - composer -n install
 
+branches:
+  only:
+  - master
+
 script: ./vendor/bin/phpunit -c tests/phpunit.xml
