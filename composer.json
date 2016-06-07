@@ -16,7 +16,7 @@
     "repositories": [
         {
             "type": "git",
-            "url": "http://github.com/easybib/zf1"
+            "url": "https://github.com/easybib/zf1"
         }
     ],
     "autoload": {
@@ -31,7 +31,7 @@
         "easybib-core/zf1": "Our Zend Framework 1 fork (sans require_once and a couple components we don't need/use)"
     },
     "require":{
-        "php": ">=5.3.0"
+        "php": ">=5.5.0"
     },
     "require-dev": {
         "easybib-core/zf1": "*",
