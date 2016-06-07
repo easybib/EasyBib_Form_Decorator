@@ -17,4 +17,4 @@ branches:
   only:
   - master
 
-script: ./vendor/bin/phpunit -c tests/phpunit.xml
+script: ./vendor/bin/phpunit
