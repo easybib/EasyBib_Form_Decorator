@@ -2,7 +2,7 @@
     "name":"easybib/form-decorator",
     "description": "EasyBib_Form_Decorator is a set of Twitter Bootstrap decorators for Zend_Form",
     "type":"library",
-    "license":"MIT",
+    "license":"Apache-2.0",
     "authors":[
         {
             "name": "Michael Scholl",
