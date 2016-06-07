@@ -58,8 +58,8 @@ $package->setDescription($description);
 $package->setChannel('easybib.github.com/pear');
 $package->setPackageType('php');
 $package->setLicense(
-    'MIT',
-    'http://www.opensource.org/licenses/mit-license.php'
+    'Apache-2.0',
+    'http://www.apache.org/licenses/LICENSE-2.0'
 );
 
 $package->setNotes($release_notes);
