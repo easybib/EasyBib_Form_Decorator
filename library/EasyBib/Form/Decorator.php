@@ -33,6 +33,11 @@
 class EasyBib_Form_Decorator
 {
     /**
+     * @var string $format ''
+     */
+    protected $format;
+
+    /**
      * Constants Definition for Decorator
      */
     const TABLE = 'table';
@@ -42,6 +47,16 @@ class EasyBib_Form_Decorator
     const BOOTSTRAP = 'bootstrap';
 
     const BOOTSTRAP_MINIMAL = 'bootstrap_minimal';
+
+    /**
+     * __construct
+     *
+     * @return self
+     */
+    public function __construct($format = self::BOOTSTRAP)
+    {
+        $this->format = $format;
+    }
 
     /**
      * Element Decorator
@@ -804,47 +819,44 @@ class EasyBib_Form_Decorator
      * Set the form decorators by the given string format or by the default div style
      *
      * @param Zend_Form $form       Zend_Form pointer-reference
-     * @param string    $format     Project_Plugin_FormDecoratorDefinition constants
      * @param string    $submit_str Element name. (TBD)
      * @param string    $cancel_str Element name. (TBD)
      *
      * @return void
      */
-    public static function setFormDecorator(
+    public function setFormDecorator(
         Zend_Form $form,
-        $format = self::BOOTSTRAP,
         $submit_str = 'submit',
         $cancel_str = 'cancel'
     ) {
+        $this->setFormDefaults($form, $this->format);
 
-        self::setFormDefaults($form, $format);
-
-        self::setButtonDecorators($form, $format, $submit_str, $cancel_str);
+        $this->setButtonDecorators($form, $this->format, $submit_str, $cancel_str);
 
         // set hidden, captcha, multi input decorators, file
         foreach ($form->getElements() as $e) {
             if ($e->getType() == 'Zend_Form_Element_Hidden') {
-                $e->setDecorators(self::$_HiddenDecorator[$format]);
+                $e->setDecorators(self::$_HiddenDecorator[$this->format]);
             }
             if (is_subclass_of($e, "ZendX_JQuery_Form_Element_UiWidget")) {
-                $e->setDecorators(self::$_JqueryElementDecorator[$format]);
+                $e->setDecorators(self::$_JqueryElementDecorator[$this->format]);
             }
             if ($e->getType() == 'Zend_Form_Element_Captcha') {
-                $e->setDecorators(self::$_CaptchaDecorator[$format]);
+                $e->setDecorators(self::$_CaptchaDecorator[$this->format]);
             }
             if ($e->getType() == 'Zend_Form_Element_MultiCheckbox') {
-                $e->setDecorators(self::$_MultiDecorator[$format]);
+                $e->setDecorators(self::$_MultiDecorator[$this->format]);
                 $e->setSeparator('');
                 $e->setAttrib('label_class', 'checkbox');
                 //$e->setAttrib("escape", false);
             }
             if ($e->getType() == 'Zend_Form_Element_Radio') {
-                $e->setDecorators(self::$_MultiDecorator[$format]);
+                $e->setDecorators(self::$_MultiDecorator[$this->format]);
                 $e->setSeparator('');
                 $e->setAttrib('label_class', 'radio');
             }
             if ($e->getType() == 'Zend_Form_Element_File') {
-                $e->setDecorators(self::$_FileDecorator[$format]);
+                $e->setDecorators(self::$_FileDecorator[$this->format]);
             }
         }
     }
@@ -861,7 +873,7 @@ class EasyBib_Form_Decorator
      *
      * @return void
      */
-    protected static function setFormDefaults(Zend_Form $form, $format)
+    protected function setFormDefaults(Zend_Form $form, $format)
     {
         $form->setDisableLoadDefaultDecorators(true);
         $form->setDisplayGroupDecorators(self::$_DisplayGroupDecorator[$format]);
@@ -890,7 +902,7 @@ class EasyBib_Form_Decorator
      *
      * @return void
      */
-    protected static function setButtonDecorators(
+    protected function setButtonDecorators(
         Zend_Form $form,
         $format,
         $submit_str,

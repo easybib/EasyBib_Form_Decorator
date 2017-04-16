@@ -65,8 +65,8 @@ class TestForm extends EasyBib_Form
         );
 
         // set decorators
-        EasyBib_Form_Decorator::setFormDecorator($this, EasyBib_Form_Decorator::BOOTSTRAP, 'submit', 'cancel');
-
+        $formDecorator = new EasyBib_Form_Decorator();
+        $formDecorator->setFormDecorator($this, 'submit', 'cancel');
     }
 
 }

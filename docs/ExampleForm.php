@@ -122,8 +122,8 @@ class ExampleForm extends EasyBib_Form
         $this->getDisplayGroup('users')->setLegend('Add User');
 
         // set decorators
-        EasyBib_Form_Decorator::setFormDecorator($this, EasyBib_Form_Decorator::BOOTSTRAP, 'submit', 'cancel');
-
+        $formDecorator = new EasyBib_Form_Decorator();
+        $formDecorator->setFormDecorator($this, 'submit', 'cancel');
     }
 
     /**
